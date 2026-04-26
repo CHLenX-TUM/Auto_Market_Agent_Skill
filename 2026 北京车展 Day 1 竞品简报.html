@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 北京车展 Day 1 竞品简报</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: 'Manrope', 'Noto Sans SC', -apple-system, sans-serif;
+  color: #1c1917;
+  background: #f5f1e8;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: #1c1917;
+  color: #f5f1e8;
+  padding: 48px 56px 40px;
+  border-bottom: 1px solid #292524;
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.class-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.15em;
+  color: #a8a29e;
+  margin-bottom: 28px;
+}
+
+.class-strip .left { color: #fca5a5; }
+
+.title-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: end;
+}
+
+.title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 54px;
+  font-weight: 500;
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+  color: #f5f1e8;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #a8a29e;
+  margin-top: 16px;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.day-tag {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 48px;
+  font-weight: 300;
+  font-style: italic;
+  color: #f5f1e8;
+  line-height: 1;
+  text-align: right;
+}
+
+.date-tag {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #a8a29e;
+  margin-top: 8px;
+  letter-spacing: 0.1em;
+  text-align: right;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid #44403c;
+}
+
+.stat-num {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 38px;
+  font-weight: 500;
+  color: #f5f1e8;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #a8a29e;
+  margin-top: 6px;
+  letter-spacing: 0.05em;
+}
+
+/* ===== TABS ===== */
+.nav {
+  background: #f5f1e8;
+  border-bottom: 1px solid #e7e5e4;
+  padding: 0 56px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  padding: 16px 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-inner::-webkit-scrollbar { display: none; }
+
+.tab {
+  padding: 10px 18px;
+  background: transparent;
+  color: #57534e;
+  border: 1px solid #d6d3d1;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.tab:hover { border-color: #78716c; color: #292524; }
+
+.tab.active {
+  background: #1c1917;
+  color: #f5f1e8;
+  border-color: #1c1917;
+}
+
+.tab .count {
+  margin-left: 8px;
+  opacity: 0.6;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ===== MAIN ===== */
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 56px 80px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #a8a29e;
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: #1c1917;
+}
+
+.filter-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ===== CAR TABLE ===== */
+.car-table-head {
+  display: grid;
+  grid-template-columns: 1.8fr 1.4fr 1.3fr 1.2fr 2fr;
+  gap: 20px;
+  padding: 12px 24px;
+  background: #1c1917;
+  color: #a8a29e;
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.12em;
+}
+
+.car-table {
+  background: white;
+  border: 1px solid #e7e5e4;
+  border-top: none;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.car-row {
+  display: grid;
+  grid-template-columns: 1.8fr 1.4fr 1.3fr 1.2fr 2fr;
+  gap: 20px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #e7e5e4;
+  align-items: start;
+}
+
+.car-row:nth-child(even) { background: #faf8f4; }
+.car-row:last-child { border-bottom: none; }
+
+.car-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1c1917;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.car-brand {
+  font-size: 12px;
+  color: #78716c;
+  margin-top: 3px;
+}
+
+.car-segment {
+  font-size: 11px;
+  color: #a8a29e;
+  margin-top: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+.eu-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  background: #7f1d1d;
+  color: #fef2f2;
+  font-size: 9px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+}
+
+.power-label {
+  font-size: 11px;
+  color: #57534e;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.power-desc, .size-value {
+  font-size: 12px;
+  color: #44403c;
+  line-height: 1.5;
+}
+
+.size-label {
+  font-size: 10px;
+  color: #a8a29e;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.size-value { font-family: 'JetBrains Mono', monospace; }
+
+.price-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.price-tag.announced { background: #1c1917; color: #f5f1e8; }
+.price-tag.pending { background: #78350f; color: #fef3c7; }
+.price-tag.tbd { background: #e7e5e4; color: #57534e; }
+
+.price-value {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1c1917;
+  line-height: 1.2;
+}
+
+.price-note {
+  font-size: 11px;
+  color: #78716c;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+.diff-text {
+  font-size: 12px;
+  color: #1c1917;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.src-text {
+  font-size: 10px;
+  color: #a8a29e;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.legend {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+  font-size: 11px;
+  color: #78716c;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+  flex-wrap: wrap;
+}
+
+/* ===== TECH ===== */
+.tech-group { margin-bottom: 28px; }
+
+.tech-group-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #1c1917;
+}
+
+.tech-num {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #a8a29e;
+  letter-spacing: 0.12em;
+}
+
+.tech-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.tech-cnt {
+  font-size: 11px;
+  color: #a8a29e;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.tech-table-head {
+  display: grid;
+  grid-template-columns: 1.4fr 1.8fr 2.5fr 1.3fr 1.1fr;
+  gap: 18px;
+  padding: 10px 22px;
+  font-size: 9px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #a8a29e;
+  letter-spacing: 0.12em;
+  background: #faf8f4;
+}
+
+.tech-table {
+  background: white;
+  border: 1px solid #e7e5e4;
+}
+
+.tech-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1.8fr 2.5fr 1.3fr 1.1fr;
+  gap: 18px;
+  padding: 18px 22px;
+  border-bottom: 1px solid #e7e5e4;
+  align-items: start;
+}
+
+.tech-row:last-child { border-bottom: none; }
+
+.vendor-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1c1917;
+  letter-spacing: -0.01em;
+}
+
+.tech-cell-name {
+  font-size: 13px;
+  color: #1c1917;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.tech-cell-metric {
+  font-size: 12px;
+  color: #44403c;
+  line-height: 1.55;
+}
+
+.mini-label {
+  font-size: 9px;
+  color: #a8a29e;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.08em;
+  margin-bottom: 3px;
+}
+
+.tech-cell-car { font-size: 11px; color: #57534e; line-height: 1.5; }
+.tech-cell-time { font-size: 11px; color: #78716c; font-family: 'JetBrains Mono', monospace; line-height: 1.4; }
+
+/* ===== SUPPLIERS ===== */
+.supp-grid { display: grid; gap: 14px; }
+
+.supp-card {
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr 2fr 0.3fr;
+  gap: 24px;
+  padding: 22px 28px;
+  background: white;
+  border: 1px solid #e7e5e4;
+  align-items: start;
+}
+
+.supp-num {
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #a8a29e;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+
+.supp-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1c1917;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.supp-event {
+  font-size: 13px;
+  color: #1c1917;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.supp-detail {
+  font-size: 12px;
+  color: #57534e;
+  line-height: 1.6;
+}
+
+.supp-eu { text-align: right; }
+
+/* ===== TAKEAWAYS ===== */
+.ta-intro {
+  font-size: 13px;
+  color: #78716c;
+  max-width: 700px;
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.ta-grid { display: grid; gap: 20px; }
+
+.ta-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  padding: 36px 40px;
+  background: white;
+  border: 1px solid #e7e5e4;
+}
+
+.ta-card.featured {
+  background: #1c1917;
+  color: #f5f1e8;
+  border-color: #1c1917;
+}
+
+.ta-num {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 64px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #7f1d1d;
+}
+
+.ta-card.featured .ta-num { color: #fca5a5; }
+
+.ta-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.ta-body {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #44403c;
+  margin-top: 14px;
+  margin-bottom: 16px;
+}
+
+.ta-card.featured .ta-body { color: #d6d3d1; }
+
+.ta-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.ta-tag {
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 4px 10px;
+  background: #faf8f4;
+  color: #57534e;
+  border: 1px solid #e7e5e4;
+  letter-spacing: 0.05em;
+}
+
+.ta-card.featured .ta-tag {
+  background: #292524;
+  color: #d6d3d1;
+  border-color: #44403c;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #1c1917;
+  color: #a8a29e;
+  padding: 32px 56px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-label { color: #f5f1e8; margin-bottom: 6px; }
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .header { padding: 32px 20px 28px; }
+  .nav { padding: 0 20px; }
+  .main { padding: 28px 20px 60px; }
+  .footer { padding: 24px 20px; }
+  .title { font-size: 36px; }
+  .day-tag { font-size: 36px; }
+  .title-row { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .section-title { font-size: 26px; }
+  .car-table-head { display: none; }
+  .car-row, .tech-row, .tech-table-head, .supp-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 18px 16px;
+  }
+  .tech-table-head { display: none; }
+  .ta-card { grid-template-columns: 1fr; gap: 12px; padding: 24px 20px; }
+  .ta-num { font-size: 48px; }
+  .ta-title { font-size: 19px; }
+}
+
+.hidden { display: none !important; }
+
+/* ===== WATERMARK ===== */
+.watermark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+  opacity: 0.055;
+}
+
+.watermark-grid {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200vw;
+  height: 200vh;
+  transform: rotate(-28deg);
+  transform-origin: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 340px);
+  grid-auto-rows: 140px;
+  gap: 0;
+  align-content: start;
+}
+
+.watermark-text {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #1c1917;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.watermark-text::before {
+  content: '●';
+  color: #7f1d1d;
+  margin-right: 10px;
+  font-size: 10px;
+}
+</style>
+</head>
+<body>
+
+<!-- WATERMARK -->
+<div class="watermark" id="watermark"></div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="class-strip">
+      <span class="left">● INTERNAL · COMPETITIVE INTELLIGENCE</span>
+      <span>车型产品部 · 海外组</span>
+    </div>
+    <div class="title-row">
+      <div>
+        <h1 class="title">2026 北京车展 Day 1 竞品简报</h1>
+        <div class="subtitle">媒体日 · 4月24日 (周五) · 顺义馆 &amp; 首都国际会展中心</div>
+      </div>
+      <div>
+        <div class="day-tag">Day 01</div>
+        <div class="date-tag">2026.04.24 · FRIDAY</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div><div class="stat-num">181</div><div class="stat-label">首发车 (全展)</div></div>
+      <div><div class="stat-num" id="stat-priced">18</div><div class="stat-label">已公布官方价格</div></div>
+      <div><div class="stat-num" id="stat-watched">39</div><div class="stat-label">重点监控车型</div></div>
+      <div><div class="stat-num">3</div><div class="stat-label">战略 Takeaway</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="tab active" data-tab="cars">1 · 首发车型 <span class="count" id="cars-count"></span></button>
+    <button class="tab" data-tab="tech">2 · 新技术 / 平台 <span class="count" id="tech-count"></span></button>
+    <button class="tab" data-tab="suppliers">3 · 供应商动态 <span class="count" id="supp-count"></span></button>
+    <button class="tab" data-tab="takeaway">4 · 战略 Takeaway <span class="count">3</span></button>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- ===== TAB 1: CARS ===== -->
+  <section id="section-cars">
+    <div class="section-head">
+      <div>
+        <div class="section-label">SECTION 01</div>
+        <h2 class="section-title">首发车型</h2>
+      </div>
+      <div class="filter-row">
+        <button class="tab active" data-filter="china">中国品牌 <span class="count" id="china-count"></span></button>
+        <button class="tab" data-filter="german">德系 <span class="count" id="german-count"></span></button>
+        <button class="tab" data-filter="all">全部 <span class="count" id="all-count"></span></button>
+      </div>
+    </div>
+    <div class="car-table-head">
+      <div>车型 / 品牌 / 级别</div>
+      <div>动力 · 关键三电</div>
+      <div>尺寸 (mm)</div>
+      <div>价格</div>
+      <div>差异点 · 来源</div>
+    </div>
+    <div class="car-table" id="car-table"></div>
+    <div class="legend">
+      <span>🇪🇺 EU · 对欧洲市场有潜在影响</span>
+      <span>● 已公布 / ● 待官方 / ● 未公布</span>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: TECH ===== -->
+  <section id="section-tech" class="hidden">
+    <div class="section-head">
+      <div>
+        <div class="section-label">SECTION 02</div>
+        <h2 class="section-title">新技术 / 平台发布</h2>
+      </div>
+    </div>
+    <div id="tech-groups"></div>
+  </section>
+
+  <!-- ===== TAB 3: SUPPLIERS ===== -->
+  <section id="section-suppliers" class="hidden">
+    <div class="section-head">
+      <div>
+        <div class="section-label">SECTION 03</div>
+        <h2 class="section-title">供应商动态</h2>
+      </div>
+    </div>
+    <div class="supp-grid" id="supp-grid"></div>
+  </section>
+
+  <!-- ===== TAB 4: TAKEAWAYS ===== -->
+  <section id="section-takeaway" class="hidden">
+    <div class="section-head">
+      <div>
+        <div class="section-label">SECTION 04</div>
+        <h2 class="section-title">Day 1 三条关键 Takeaway</h2>
+        <div class="ta-intro">用结论句写，不铺陈。每条 Takeaway 标注相关的原始数据锚点，便于回溯。</div>
+      </div>
+    </div>
+    <div class="ta-grid" id="ta-grid"></div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-label">● 数据时效</div>
+      <div>截至 2026.04.24 下午闭馆前 · 媒体日信息持续更新中</div>
+    </div>
+    <div>
+      <div class="footer-label">● 主要来源</div>
+      <div>IT之家 · 汽车之家 · 新华社 · 新浪汽车 · 证券时报 · 爱范儿 · 盖世汽车 · 厂商官方</div>
+    </div>
+    <div>
+      <div class="footer-label">● 合规</div>
+      <div>所有数据均注明来源 · 不确定数据留空不估算</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+
+const CARS_CHINA = [{"name": "小米 Vision GT (概念超跑)", "brand": "小米", "segment": "双门纯电概念超跑", "power": "BEV", "battery": "参数未公布", "size": "未公布 · \"由风塑形\" 空气动力学优先", "price": "未公布", "priceType": "tbd", "priceNote": "概念车 · 国内首秀 (4/24)", "diff": "小米首款受邀参与 Gran Turismo 赛车游戏全球合作的中国品牌概念车；全球设计团队作品；合金车模 ¥199 同步开售", "eu": false, "src": "IT之家 / 雷军微博 / TVBS"}, {"name": "小米 YU7 GT", "brand": "小米", "segment": "高性能跑车级 SUV", "power": "BEV 双电机", "battery": "前 288kW + 后 450kW = 1003 马力；极速 300km/h；CLTC 705 km；纽北调校", "size": "基于 YU7 平台", "price": "未公布", "priceType": "tbd", "priceNote": "4/24 雷军现场宣布 · 5 月底发布", "diff": "🎯 小米欧洲研发中心首款车；对标 Tesla Model Y Performance；德系调校目标", "eu": true, "src": "新京报 / 网易 / TVBS"}, {"name": "新一代 小米 SU7 / SU7 Ultra / YU7", "brand": "小米", "segment": "在售展车", "power": "BEV", "battery": "新 SU7 21.99/24.99/30.39 万，3/19 上市；SU7 Ultra 52.99 万；YU7 在售", "size": "已上市产品", "price": "¥21.99–52.99 万", "priceType": "announced", "priceNote": "新 SU7 锁单 60000；YU7 交付 23.1 万辆；总累计 65.5 万", "diff": "北京车展小米全系首次同台；新 SU7 全拆解版展出 (安全结构演示)", "eu": false, "src": "网易 / IT之家 / 雷军微博"}, {"name": "尚界 Z7 / Z7T", "brand": "尚界 (华为+上汽)", "segment": "C级 纯电轿跑 / 猎装", "power": "BEV 800V (巨鲸平台)", "battery": "81 kWh LFP / 100 kWh 三元 (宁德)；CLTC ≤ 905 km；双电机 170+264 kW 0-100 3.44s", "size": "5036×1976×1465 · 3000", "price": "¥21.98–29.98 万 / 22.98–30.98 万", "priceType": "announced", "priceNote": "4/22 上市 · 大定 27分钟破 12000；预订 >8 万", "diff": "🎯 鸿蒙智行全新品牌 \"尚界\" 首秀；起售价比新小米 SU7 便宜 100 元；全系标配 ADS 4.1 + 896 线激光；肖战代言", "eu": false, "src": "IT之家 / 盖世汽车 / 深圳新闻网"}, {"name": "问界 M6", "brand": "问界 (鸿蒙智行)", "segment": "C级 中大型 SUV", "power": "EREV + BEV 双版本", "battery": "EREV 综合 1605 km；BEV CLTC 760 km / 120 kW DC 快充；双电机 0-100 4.5s", "size": "4960×1985×1736 · 2950", "price": "¥25.98–29.98 万", "priceType": "announced", "priceNote": "4/22 上市即交付 · 大定 15分钟破万", "diff": "填补 M5-M7 空白；全系 ADS 4.1 + 896 线激光 + 巨鲸电池；前 202L 前备箱；对标 Model Y / 小米 YU7 / L6", "eu": false, "src": "IT之家 / 盖世汽车 / 爱范儿"}, {"name": "小鹏 GX", "brand": "小鹏", "segment": "C级 6座SUV", "power": "BEV (800V SiC) + EREV", "battery": "纯电 CLTC 635/665/720/750 km · 5C | 增程 1.5T，纯电 430km，综合 1585km", "size": "5265×1999×1800 · 3115", "price": "¥39.98 万起", "priceType": "announced", "priceNote": "预售 · Q2 上市", "diff": "40万级唯一 BEV+EREV 双形式；博世新一代线控转向全球首发量产定点；4×自研图灵芯片 3000 TOPS", "eu": false, "src": "小鹏官方发布会 / IT之家 / 汽车之家"}, {"name": "蔚来 ES9", "brand": "蔚来", "segment": "D级 旗舰 SUV", "power": "BEV 900V", "battery": "102 kWh 三元锂，CLTC 620km；换电补能；前180kW + 后340kW，0-100 4.3s", "size": "5365×2029×1870 · 3250", "price": "¥52.8–65.8 万 / BaaS ¥42–55 万", "priceType": "announced", "priceNote": "5月底上市", "diff": "唯一走换电路线的旗舰纯电 SUV；自研 5nm 神玑 NX9031 >1000 TOPS；天行全主动悬架", "eu": false, "src": "蔚来发布会 (4/9) / 汽车之家 / 证券之星"}, {"name": "理想 L9 Livis", "brand": "理想", "segment": "D级 6座 SUV", "power": "EREV (第三代增程)", "battery": "72.7 kWh 三元锂 (5C)，CLTC 纯电 420km，综合 >1500km；WLTC 馈电 6.3L", "size": "5255×2000×1810 · 3125", "price": "¥55.98 万", "priceType": "announced", "priceNote": "5/15 上市即交付", "diff": "60万以内首搭 800V 全主动悬架 + 完全体全线控底盘 (含 EMB)；2×马赫 100 自研芯片 2560 TOPS", "eu": false, "src": "理想官方 / IT之家 / 汽车之家"}, {"name": "智界 V9", "brand": "智界 (奇瑞+华为)", "segment": "D级 7座 MPV", "power": "BEV (800V) + EREV (雪鸮)", "battery": "纯电 >700km (5分钟补 150km) | 增程 综合 >1250km，10分钟补 300km，0-100 4.2s", "size": "5359×2009×1879 · 3250", "price": "¥39.98–52.98 万", "priceType": "announced", "priceNote": "4/22 预售 · 1 小时订 12500", "diff": "鸿蒙智行首款 MPV；后轮转向 ±7°，转弯半径 5.35m；首搭 ADS 5 + DLP 投影大灯", "eu": false, "src": "智界官方 / 汽车之家 / IT之家"}, {"name": "全新一代 问界 M9", "brand": "鸿蒙智行 (赛力斯)", "segment": "D级 大型 SUV", "power": "BEV + EREV 全系 800V", "battery": "EREV 纯电 335km；BEV 120kWh 120 kW 续航 >628 km", "size": "5285×2026×1845 · 3125 (M9 Ultimate 领世 5.4m)", "price": "预售 ¥49.98 万起", "priceType": "pending", "priceNote": "4/22 开启预售 · 1 小时破 11500", "diff": "首搭 ADS 5 + 6 激光雷达立体矩阵；全主动悬架；Ultimate 加长版支持线控转向；累计交付 28 万辆", "eu": false, "src": "IT之家 / 爱范儿 / 盖世汽车"}, {"name": "领克 10 / 10+", "brand": "领克", "segment": "C级 纯电轿车", "power": "BEV 900V", "battery": "77.17 / 95 kWh，CLTC 536–816km；V4 超充 SOC 10-70% 4分22秒；10+ 双电机 680kW/925马力，0-100 3.2s", "size": "5050×1966×1468 · 3005", "price": "预售开启 (4/24)", "priceType": "pending", "priceNote": "标准版 20-23 万预期", "diff": "同级率先量产 900V；英伟达 Thor 700 TOPS；10+ 亚洲山脊圈速 1:40.14", "eu": true, "src": "领克官方 / 汽车之家"}, {"name": "大唐 EV", "brand": "比亚迪 王朝网", "segment": "D级 7座 旗舰 SUV", "power": "BEV 1000V 超级e平台", "battery": "第二代刀片电池，CLTC 950km；10C 闪充 · 1000A · 峰值 1000kW；5分钟补 400km", "size": "5263(5302)×1999×1790 · 3130", "price": "¥25–32 万", "priceType": "announced", "priceNote": "4/24 预售 · 上半年上市", "diff": "全球首批 1000V + 10C 量产车；王朝网首款 D 级 + 后轮转向；云辇-A 道路预瞄", "eu": false, "src": "IT之家 (4/24 当日) / 汽车之家"}, {"name": "仰望 U9 Xtreme \"破晓时刻\"", "brand": "仰望 (比亚迪)", "segment": "量产高定超跑 (全球 30 台)", "power": "BEV 四电机", "battery": "4×30000 转电机 · 单电机峰值 555 kW · 整车 3019 马力；推重比 1217 Ps/t", "size": "基于 U9X 平台", "price": "未公布", "priceType": "tbd", "priceNote": "4/24 首秀 · 已签约排产", "diff": "🎯 纽北 6:59.157 量产电车圈速记录保持者的量产高定版；微米级金粉漆面；仰望首款量产高定", "eu": false, "src": "新浪科技 / IT之家"}, {"name": "仰望 U8L 鼎藏版", "brand": "仰望 (比亚迪)", "segment": "D级 全尺寸行政 SUV (四座)", "power": "PHEV 易四方", "battery": "—", "size": "5400×2049×1921 · 3250", "price": "未公布", "priceType": "tbd", "priceNote": "4/24 首秀", "diff": "U8L 鼎世版基础上打造大四座布局；开放整车个性化定制", "eu": false, "src": "新浪科技"}, {"name": "方程豹 FORMULA X + 方程 S/SL", "brand": "方程豹 (比亚迪)", "segment": "超跑概念 + C级轿跑", "power": "BEV", "battery": "概念参数未公布；SL 或三电机 ~1000马力 + 云辇-M 磁流变", "size": "SL >5200 · 3100", "price": "未公布", "priceType": "tbd", "priceNote": "超跑计划 2027 量产", "diff": "方程豹首次切入超跑 + 轿车双品类；品牌矩阵完整化", "eu": false, "src": "新浪汽车 / IT之家"}, {"name": "海豹 08", "brand": "比亚迪 海洋网", "segment": "C级 中大型轿车", "power": "BEV 800V", "battery": "第二代刀片 + 兆瓦闪充；续航 >1000km；风阻 0.23 Cd", "size": "5150×1999×1505 · 3030", "price": "未公布", "priceType": "tbd", "priceNote": "Q2 上市 · 预期 30-35 万", "diff": "海洋网首款旗舰轿车；后轮转向 + 云辇-A 下放到 30 万级", "eu": false, "src": "比亚迪官方 / 网易汽车"}, {"name": "海狮 08", "brand": "比亚迪 海洋网", "segment": "C级 大型 5/6 座 SUV", "power": "BEV + PHEV", "battery": "纯电 CLTC 900km；四驱 >480kW，0-100 <5s", "size": "5115×1999×1800 · 3030", "price": "未公布", "priceType": "tbd", "priceNote": "—", "diff": "海洋网首款大型 SUV；与大唐共用 800V + 后轮转向 + 云辇-A", "eu": false, "src": "证券之星 / 网易汽车"}, {"name": "第三代 元 PLUS", "brand": "比亚迪 王朝网", "segment": "A0/A 级 SUV", "power": "BEV 800V 闪充", "battery": "57.545 / 68.547 kWh，CLTC 540 / 630 km；10%→97% 9 分钟", "size": "4665×1895×1675 · 2770", "price": "未公布", "priceType": "tbd", "priceNote": "预期 12-15 万", "diff": "把第二代刀片 + 闪充下放到 15 万级紧凑 SUV", "eu": true, "src": "IT之家 / 汽车之家"}, {"name": "腾势 Z9 GT (敞篷超跑版)", "brand": "腾势 (比亚迪)", "segment": "D级猎装轿车 / 敞篷超跑", "power": "BEV + PHEV (易三方)", "battery": "纯电 1036 km (闪充)；对标保时捷 Panamera", "size": "未公布", "price": "未公布", "priceType": "tbd", "priceNote": "4/24 敞篷版全球首秀 · PHEV 版 ¥40 万起预期", "diff": "腾势全球首款智能电动超跑敞篷版；定位全球车型；易三方平台", "eu": true, "src": "腾讯新闻 / 雷峰网"}, {"name": "岚图 泰山 X8", "brand": "岚图", "segment": "C级 大五座 SUV", "power": "PHEV + BEV", "battery": "PHEV 纯电 370km / 综合 1506km · 5C；EV 727km", "size": "5200×2025×1814 · 3090", "price": "¥30.29–38.99 万", "priceType": "announced", "priceNote": "PHEV 30.29/33.99/36.99 · EV 34.99/38.99 · 20h 订单 2 万", "diff": "华为 896 线 + 3 固态四激光方案；鸿蒙座舱 5.2 + 双15.6\" 双联屏首发；三腔空悬 + 双向16° 后轮转向", "eu": true, "src": "岚图官方 / 凤凰网 / 北京商报"}, {"name": "奕境 X9", "brand": "奕境 (东风+华为)", "segment": "D级 大六座 SUV", "power": "BEV + EREV", "battery": "EV 140 kWh，CLTC 850km；增程 纯电 ~250km，综合 >1200km", "size": ">5300 · 3100", "price": "预售区间 ¥38–52 万", "priceType": "pending", "priceNote": "年内交付 · 非官方正式价", "diff": "华为乾崑 100% 上车 (ADS 5 + HarmonySpace 6 + 896 线激光 + 乾崑OS)；奕境品牌首款车", "eu": false, "src": "华为乾崑技术大会 (4/23) / 汽车之家"}, {"name": "全新一代 红旗 H9 / H7", "brand": "红旗 (一汽)", "segment": "C级 豪华轿车", "power": "H9: 2.0T 纵置两挡混动 | H7: PHEV (1.5T 110kW)", "battery": "H7: 三元锂 / 磷酸铁锂 双电池方案", "size": "H7: 5060×1910×1480 · 2970", "price": "未公布", "priceType": "tbd", "priceNote": "—", "diff": "H9 首批搭载华为乾崑 ADS 5 + 激光雷达 + HarmonySpace + 四挡空悬；H7 填补 H6-H9 空白", "eu": false, "src": "IT之家 / 凤凰网"}, {"name": "零跑 D19", "brand": "零跑", "segment": "D级 全尺寸 SUV", "power": "BEV 1000V + EREV", "battery": "EV 115 kWh (宁德)，CLTC 720km；EREV 80.3kWh，纯电 500km", "size": "未公布", "price": "¥21.98–26.98 万", "priceType": "announced", "priceNote": "4/16 上市即交付", "diff": "双高通 8797 芯片 1280 TOPS + 激光雷达 + VLA；\"半价对标 L9/M9\" 的价格锚定", "eu": false, "src": "新华社 / 汽车之家 / 证券时报"}, {"name": "零跑 Lafa5 Ultra", "brand": "零跑", "segment": "A级 运动轿跑", "power": "BEV", "battery": "—", "size": "4490×1880×1510 · 2735", "price": "¥11.88–12.48 万", "priceType": "announced", "priceNote": "4/24 限时优惠价", "diff": "Lafa5 高性能版；运动套件 + LEAP 3.5 架构 5 月推送全国城区 NAP", "eu": true, "src": "TechWeb (新浪)"}, {"name": "乐道 L90 (2026 款)", "brand": "乐道 (蔚来)", "segment": "C级 大六座 SUV", "power": "BEV 900V (换电)", "battery": "900V 换电平台；全栈智能化升级", "size": "未公布", "price": "¥26.58 万起 / 电池租用方案 ¥17.98 万起", "priceType": "announced", "priceNote": "4/24 上市", "diff": "乐道品牌首款大 SUV 焕新；继承蔚来 BaaS 电池租用体系", "eu": false, "src": "易车 / 太平洋汽车"}, {"name": "昊铂 S600", "brand": "昊铂 (广汽)", "segment": "新豪华智慧运动 SUV", "power": "BEV + EREV", "battery": "参数未公布", "size": "大五座 · 溜背轿跑造型", "price": "未公布", "priceType": "tbd", "priceNote": "4/24 首秀 · 同步盲定 · 预期 30-40 万", "diff": "昊铂首款运动溜背 SUV；切入 30-40 万年轻高端市场 (对标小鹏/智己)", "eu": false, "src": "汽车之家 / 新车情报局"}, {"name": "别克至境 E7", "brand": "别克 (上汽通用)", "segment": "中型 PHEV 大五座 SUV", "power": "PHEV 真龙 Pro (1.5T)", "battery": "32.6 kWh LFP；CLTC 纯电 235km；综合 1630km", "size": "4850×1910×1676 · 2850", "price": "¥15.49 万起 (置换权益价) / ¥16–21 万", "priceType": "announced", "priceNote": "4/22 定价 · 4/24 上市 · 全系 42 项标配", "diff": "别克高端新能源子品牌 \"至境\" 首款 SUV；高配 骁龙 8775P + 激光雷达 + 行业首发最新豆包大模型；\"入门即满配\"", "eu": false, "src": "易车 / 搜狐 / 汽车之家"}, {"name": "焕新 极氪 009", "brand": "极氪", "segment": "D级豪华 MPV", "power": "BEV 全栈 900V 高压架构", "battery": "900V 全栈升级；具体三电未公布", "size": "—", "price": "预售 (4/24)", "priceType": "pending", "priceNote": "舒适+智能全面升级", "diff": "900V 全栈平台化升级；极氪 MPV 改款", "eu": false, "src": "太平洋汽车"}, {"name": "第二代 腾势 D9", "brand": "腾势 (比亚迪)", "segment": "D级豪华 MPV", "power": "PHEV + BEV", "battery": "未公布", "size": "—", "price": "预售 ¥38.98 万起", "priceType": "pending", "priceNote": "4/27 上市", "diff": "腾势 D9 换代；合资+自主 MPV 同台竞争加剧", "eu": false, "src": "易车"}, {"name": "坦克 700 Hi4 系列", "brand": "坦克 (长城)", "segment": "C级 硬派越野 PHEV", "power": "Hi4 PHEV", "battery": "—", "size": "—", "price": "¥42.8 万起", "priceType": "announced", "priceNote": "4/22 上市 · 全系标配激光雷达", "diff": "硬派越野首款全系标配激光雷达的 PHEV；长城智能越野", "eu": false, "src": "太平洋汽车 (index 列表)"}];
+const CARS_GERMAN = [{"name": "新世代 iX3 长轴距版", "brand": "宝马", "segment": "C级 纯电 SUV", "power": "BEV 800V", "battery": "108 kWh 大圆柱；CLTC 920km；400kW 快充 (10分钟补 427km)；双电机 345kW/645N·m，0-100 4.9s", "size": "加长 >100mm · 3005+", "price": "未公布", "priceType": "tbd", "priceNote": "下半年上市", "diff": "Neue Klasse 首款长轴；Momenta 全场景领航 + 阿里定制 LLM；中国首发后出口泰/马/印尼/印", "eu": true, "src": "宝马集团官方 (press.bmwgroup.com) / IT之家"}, {"name": "AUDI E7X", "brand": "上汽奥迪 (AUDI 字母标)", "segment": "C级 大五座 SUV", "power": "BEV 900V", "battery": "宁德时代 109 kWh；CLTC 751km；4C 快充；单电机 300kW / 双电机 200+300kW，0-100 3.97s", "size": "5049×1997–2002×1710 · 3060", "price": "未公布", "priceType": "tbd", "priceNote": "上半年上市 · 先行者计划已开启", "diff": "AUDI 字母标第二款量产；车顶激光雷达 + Momenta 飞轮大模型端到端；行业首发 109 kWh CATL 电池", "eu": true, "src": "IT之家 / 新浪汽车 / 上汽奥迪官方"}, {"name": "新一代 S 级 (中期改款)", "brand": "梅赛德斯-奔驰", "segment": "D级 豪华轿车", "power": "直列六缸 + 17kW ISG 48V", "battery": "—", "size": "5304×1921×1503 · 3216 (+14mm)", "price": "未公布", "priceType": "tbd", "priceNote": "中国首秀 (海外已全球首发)", "diff": "首创后排正向安全气囊；清华+智谱 VLM 多模态后排娱乐；50%+ 部件全新", "eu": false, "src": "第一电动网 / 搜狐 / 证券之星"}, {"name": "全新纯电 GLC SUV (长轴)", "brand": "梅赛德斯-奔驰", "segment": "C级 豪华纯电 SUV", "power": "BEV 800V", "battery": "85.5 kWh (可用)，CLTC >700km；320kW 快充 (10-80% 22分钟)；后轴两挡变速箱", "size": "4933(4949)×1902(1970)×1690(1710) · 3027", "price": "未公布", "priceType": "tbd", "priceNote": "年内上市", "diff": "基于 MB.EA；行业首款能效优化电动两挡变速箱；S 级同源 AIRMATIC + 4.5° 后轮转向；可选 6 座", "eu": true, "src": "第一电动网 / 搜狐 / 新浪汽车"}, {"name": "纯电 Cayenne / Cayenne Turbo Electric", "brand": "保时捷", "segment": "豪华 SUV", "power": "BEV 800V", "battery": "113 kWh；WLTP 642 / 623 km；400kW 快充 (10-80% <16分钟)；Electric 300kW，Turbo 630-850kW (0-100 2.5s)", "size": "轴距 3020 (+130mm)", "price": "海外 $111,350 / $165,350 起", "priceType": "announced", "priceNote": "国内未公布 · 夏末起海外交付", "diff": "PPE 升级版平台；可选装 11kW 无线充电 (美国)；0.25 Cd 风阻；品牌史上动力最强量产车", "eu": true, "src": "IT之家 / 腾讯新闻 / 新浪科技"}, {"name": "ID. AURA T6", "brand": "一汽-大众", "segment": "B级 纯电中型 SUV", "power": "BEV", "battery": "800V 架构 (推测)；具体三电未公布", "size": "未公布", "price": "未公布", "priceType": "tbd", "priceNote": "预期 15-25 万 · 年内上市", "diff": "大众品牌首款搭激光雷达纯电车；首发 CEA 电子电气架构 (VW+小鹏联合开发) + 酷睿程 (VW+地平线)", "eu": true, "src": "搜狐 / 易车 / 汽车之家"}, {"name": "ID. ERA 9X", "brand": "上汽大众", "segment": "D级 全尺寸增程 SUV", "power": "EREV (EA211 1.5T 黄金增程器)", "battery": "65.2 kWh；CLTC 纯电 347/406km；综合 1611/1651km；前后电机 370/380kW，0-100 5.6s", "size": "未公布 · 大五座/六座", "price": "¥32.98–37.98 万", "priceType": "announced", "priceNote": "3/30 预售 · 4/25 上市", "diff": "合资首个全尺寸增程 SUV；Momenta 行云智驾；闭式双腔空悬 150mm 行程 · 蟹行模式", "eu": false, "src": "IT之家 / 凤凰网 / 易车"}, {"name": "全新一代 A6L (C9)", "brand": "一汽-奥迪", "segment": "C级 豪华燃油轿车", "power": "2.0T / 3.0T 燃油 + 48V", "battery": "—", "size": "未公布", "price": "¥32.3 万起", "priceType": "announced", "priceNote": "预售", "diff": "PPC 豪华燃油平台；首搭华为乾崑辅助驾驶 + 激光雷达的 BBA 燃油车", "eu": false, "src": "凤凰网 / 搜狐"}, {"name": "Smart 精灵 #6", "brand": "smart", "segment": "中大型 PHEV SUV", "power": "PHEV 1.5T", "battery": "综合 320kW；CLTC 纯电 285km，综合 1810km", "size": "未公布", "price": "未公布", "priceType": "tbd", "priceNote": "—", "diff": "smart 首款大中型 PHEV；采埃孚闭环转向控制 + FSD 可变阻尼", "eu": true, "src": "新浪汽车"}];
+const TECH = [{"category": "三电 / 电池", "items": [{"vendor": "宁德时代", "name": "第三代神行超充电池", "metric": "LFP；等效 10C / 峰值 15C；10%→98% 6分27秒；-30°C 下 20%→80% 9分钟；内阻 0.25 mΩ", "firstCar": "待宣", "timeline": "未公布", "eu": true}, {"vendor": "宁德时代", "name": "第三代麒麟电池 (CTP 3.0+)", "metric": "三元锂 280 Wh/kg；电池包 625kg；1000km 续航；10C 超充；热电分离", "firstCar": "待宣", "timeline": "未公布", "eu": true}, {"vendor": "宁德时代", "name": "麒麟凝聚态电池", "metric": "350 Wh/kg (量产最高) / 760 Wh/L；轿车 1500km / 大SUV 1000km；电池包 <650kg；凝聚态电解质", "firstCar": "待宣", "timeline": "未公布", "eu": true}, {"vendor": "宁德时代", "name": "第二代骁遥超级增·混电池", "metric": "230 Wh/kg；LFP 版 500km / 三元版 600km 纯电；综合 2000km", "firstCar": "待宣", "timeline": "未公布", "eu": true}, {"vendor": "宁德时代", "name": "第二代钠新电池", "metric": "175 Wh/kg；-40°C 容量保持 90%；5C；>15000 次循环；成本较 LFP 低 30%", "firstCar": "待宣", "timeline": "2026 Q4 规模化量产", "eu": true}, {"vendor": "宁德时代", "name": "巧克力换电块 26 号", "metric": "800V；首批 75 kWh；2026 年底 4000 座超换一体站", "firstCar": "长安/奇瑞/广汽/赛力斯/五菱/北汽", "timeline": "2026-2028", "eu": false}, {"vendor": "比亚迪弗迪", "name": "第二代刀片电池 + 兆瓦闪充", "metric": "1000V 架构；10C 倍率 · 1000A；5 分钟补 400km；9 分钟充满", "firstCar": "大唐 / 海豹08 / 海狮08 / 元PLUS", "timeline": "4/24 起预售", "eu": false}, {"vendor": "华为 DriveONE", "name": "雪鸮智能增程系统", "metric": "奇瑞 1.5T SQRH4J15 增程器 115 kW + 双电机；综合 >1250km；10分钟补 300km", "firstCar": "智界 V9", "timeline": "2026 Q2 上市", "eu": false}]}, {"category": "智驾芯片 / 算法", "items": [{"vendor": "华为乾崑", "name": "ADS 5 + WEWA 2.0 世界模型", "metric": "多智能体博弈 + 在线强化学习训练强度 ×10；六维度安全；碰撞风险 -50%；累计辅助里程 >100亿公里", "firstCar": "红旗 H9 / 尊界 / 问界 M9 新款 / 智界 V9 / 奕境 X9", "timeline": "2026 逐步上车", "eu": true}, {"vendor": "华为乾崑", "name": "乾崑 OS + XMC 数字底盘引擎 + LCoS 双焦面 AR-HUD", "metric": "信号时延 -30%；控车精度 +30%；近焦 4.5m / 远焦 130\"", "firstCar": "未公布", "timeline": "—", "eu": false}, {"vendor": "理想 (自研)", "name": "马赫 100 芯片 (5nm 车规)", "metric": "单颗 1280 TOPS；双颗 2560 TOPS；官方称约 Thor-U 的 3 倍", "firstCar": "理想 L9 Livis", "timeline": "5/15 起交付", "eu": false}, {"vendor": "小鹏 (自研)", "name": "SEPA 3.0 + 4× 图灵芯片 + VLA 2.0", "metric": "本地算力 3000 TOPS；航空级六重全域安全冗余；EIS 阻抗谱 BMS", "firstCar": "小鹏 GX", "timeline": "2026 Q2 交付", "eu": false}, {"vendor": "蔚来 (自研)", "name": "神玑 NX9031 + AQUILA 天鹰座超感", "metric": "5nm，>1000 TOPS；31 感知硬件 (3× 激光雷达)；天行全主动悬架 60mm 行程", "firstCar": "蔚来 ES9", "timeline": "5 月底上市", "eu": false}, {"vendor": "地平线", "name": "征程 6 系列 + HSD + 星空 (年内)", "metric": "征程 6P 560 TOPS；征程家族 2025 累计出货 1000 万；ADAS L2 市占 47.7%", "firstCar": "酷睿程 (VW CEA) / 理想 AD Pro 4.0 / 博世中阶", "timeline": "CEA 首款 2026 随 ID.AURA T6；智驾大陆方案 2026 Q3", "eu": true}, {"vendor": "大众 CARIAD + 小鹏 + 地平线", "name": "CEA 中央计算+区域控制 + 酷睿程智驾", "metric": "大众品牌首款搭激光雷达纯电 SUV；基于地平线 HSD", "firstCar": "ID. AURA T6", "timeline": "年内上市", "eu": true}, {"vendor": "Momenta", "name": "飞轮大模型端到端智驾 (R7 强化学习世界模型)", "metric": "全场景领航；多 BBA 同时落地", "firstCar": "BMW iX3 LWB / AUDI E7X / GLC EV / ID.ERA 9X", "timeline": "2026 各车型陆续", "eu": true}]}, {"category": "底盘 / 架构", "items": [{"vendor": "博世 · 全球首发", "name": "新一代线控转向 (量产定点)", "metric": "车规冗余；与小鹏联合落地；博世全球首个线控转向量产项目", "firstCar": "小鹏 GX", "timeline": "2026 Q2", "eu": true}, {"vendor": "理想", "name": "800V 全主动悬架 + 全线控底盘 (线控转向+四轮转向+EMB)", "metric": "单轮举升力 >10000 N；响应 10ms；转弯半径 5.4m；3 轮失效时单轮 EMB 可刹停", "firstCar": "理想 L9 Livis", "timeline": "5/15 起", "eu": false}, {"vendor": "比亚迪", "name": "云辇-A 智能空悬 + 道路预瞄 + 一体式后轮转向", "metric": "后轮转向对整车重量影响 <20kg；道路预瞄 10 秒内", "firstCar": "大唐 / 海豹 08 / 海狮 08", "timeline": "4/24 预售起", "eu": false}, {"vendor": "宝马 (Neue Klasse)", "name": "第六代 eDrive + 驾控超级大脑 + 全景 iDrive", "metric": "800V 中央域控；整合动力/制动/能量回收/转向", "firstCar": "新世代 iX3 LWB", "timeline": "2026 下半年", "eu": true}, {"vendor": "奔驰", "name": "MB.EA 平台 + 电动两挡变速箱 (后轴)", "metric": "行业首款能效优化两挡；S 级同源 AIRMATIC + 4.5° 后轮转向", "firstCar": "纯电 GLC SUV", "timeline": "年内", "eu": true}]}, {"category": "智舱 / AI", "items": [{"vendor": "华为乾崑", "name": "HarmonySpace 6 + AMS 舱内 AI 多模感知 + 小艺 MoLA 2.0", "metric": "AMS：摄像头+红外+星闪；可监测后排呼吸胸腔起伏；千亿级多模态大模型", "firstCar": "红旗 H9 / 智界 V9", "timeline": "2026 起", "eu": false}, {"vendor": "奔驰 + 清华 + 智谱", "name": "端侧多模态 VLM 后排娱乐", "metric": "融合语音/表情/手势；首个将多模态大模型落地后排娱乐的汽车品牌", "firstCar": "新一代 S 级", "timeline": "年内", "eu": true}, {"vendor": "宝马 + 阿里", "name": "宝马定制大语言模型 (LLM)", "metric": "与阿里巴巴联合开发；基于 iDrive 9 / 操作系统 X", "firstCar": "新世代 iX3 LWB", "timeline": "下半年", "eu": true}]}];
+const SUPPLIERS = [{"name": "宁德时代 (CATL)", "event": "超级科技日发布 5 款电池 + 超换一体网络", "detail": "神行 / 麒麟 / 凝聚态 / 骁遥 / 钠新覆盖全化学体系；首批超换共享合作：长安/奇瑞/广汽/赛力斯/五菱/北汽；奥迪 E7X 首发 109 kWh；钠电池 Q4 量产", "eu": true}, {"name": "华为车BU (乾崑)", "event": "ADS 5 + HarmonySpace 6 + AMS + XMC + 乾崑 OS 全面发布 (4/23)", "detail": "整车搭载量突破 170 万辆；合作 25+ 品牌、50+ 车型；2026 研发投入 180 亿元；WEWA 2.0 世界模型训练强度 ×10", "eu": true}, {"name": "地平线 (Horizon)", "event": "征程家族出货突破 1000 万；星空舱驾融合芯片年内发布", "detail": "ADAS L2 市占 47.7%；酷睿程 (大众合资) 首款车 ID.AURA T6 落地；博世/电装/轻舟/卓驭 2026 陆续量产", "eu": true}, {"name": "Momenta", "event": "飞轮大模型端到端智驾方案 (R7 强化学习世界模型)", "detail": "Day 1 BBA 全面绑定：BMW iX3 LWB / AUDI E7X / 奔驰 GLC EV / ID.ERA 9X；合资品牌默认选择", "eu": true}, {"name": "博世 (Bosch)", "event": "全球首发新一代线控转向量产定点于小鹏 GX", "detail": "Day 1 最重要 Tier-1 首搭事件；基于征程 6E/M 的博世中阶智驾在东风奕派/北京越野量产；2026 海外首发", "eu": true}, {"name": "比亚迪弗迪", "event": "第二代刀片电池 + 兆瓦闪充随大唐/海豹08/海狮08/元PLUS 量产", "detail": "1000V + 10C + 1000A；5 分钟补 400km；9 分钟充满；CLTC 950km", "eu": false}, {"name": "禾赛 / 华为激光雷达", "event": "华为 896 线双光路图像级 + 3 固态组合进入第二轮部署", "detail": "岚图泰山 X8、阿维塔 06T、奕境 X9 搭载；智界 V9 搭华为 192 线", "eu": false}, {"name": "采埃孚 (ZF)", "event": "闭环转向控制 + FSD 可变阻尼", "detail": "smart 精灵 #6 搭载", "eu": true}, {"name": "大陆集团 (Continental)", "event": "合资智驾大陆基于征程 6M 端到端城区 NOA", "detail": "2 家头部自主车企定点，2026 Q3 起量产，主打 10 万元级市场", "eu": true}];
+const TAKEAWAYS = [{"num": "01", "title": "40-60 万旗舰 SUV 区间 Day 1 新增 ≥8 款全尺寸产品，价格锚定全面下移", "body": "BEV + EREV 双线并举成为标配（小鹏 GX / 蔚来 ES9 / 理想 L9 Livis / 智界 V9 / 大唐 EV / 岚图泰山 X8 / 奕境 X9 / 问界 M9）。对 XPeng GX 最直接的威胁不是 ES9/L9 Livis 的价格（均高 12-26 万），而是智界 V9 在 39.98 万起同一起步价已是 MPV 品类，以及大唐 EV 以 25-32 万定价直接挤压 GX 正式定价空间。零跑 D19 (21.98 万起) + 尚界 Z7 (21.98 万起，比新 SU7 便宜 100 元) 双重锚定 20-22 万 D 级 SUV / C 级轿跑。", "tags": ["产品密度", "价格锚定", "尚界"]}, {"num": "02", "title": "800V+ 下放完成，900-1000V 成为新世代旗舰门槛；小米欧洲研发中心开始产出", "body": "5C/10C 超充向 A 级下沉：领克 10 (900V) / AUDI E7X (900V) / BMW iX3 LWB (800V 400kW) / 大唐 (1000V 兆瓦闪充) / 智界 V9 (800V) / 尚界 Z7 (华为巨鲸 800V) / 问界 M6 集中亮相。宁德 5 款电池齐发 + 26 号巧克力换电块下探到 B 级车，钠新 Q4 量产。🇪🇺 关键信号：小米 YU7 GT 由小米欧洲研发中心团队深度参与研发，已在纽北做德系调校测试，直接对标 Tesla Model Y Performance — 欧洲 OEM 若维持 400-600km WLTP / 150-200kW 水平，产品代差 2026 下半年扩大。", "tags": ["高压架构", "钠电池", "小米欧研"]}, {"num": "03", "title": "合资 BBA 智驾/座舱全部押注中国供应商，Tier-1 格局重构；鸿蒙智行品牌矩阵 5 牌齐发", "body": "🇪🇺 iX3 LWB (Momenta + 阿里 LLM) / AUDI E7X (Momenta 飞轮) / 奔驰 GLC EV (强化学习 + 中国团队主导) / ID.AURA T6 (博世-VW-小鹏-地平线四方绑定，CEA 架构首个由中国反向定义的 VW 全球 EE 架构) / ID.ERA 9X (Momenta 行云) / 别克至境 E7 (骁龙 8775P + 豆包大模型首发)。华为鸿蒙智行一口气打开 \"问界/智界/尚界/享界/尊界\" 5 品牌矩阵，Day 1 单日预订/大定合计约 5 万台。博世在小鹏 GX 完成线控转向全球首个量产定点 + 地平线星空芯片年内发布 + 酷睿程进入 VW 全球序列 — 中国智驾方案正式成为合资品牌默认选择。", "tags": ["供应链重构", "鸿蒙智行 5 牌", "酷睿程"]}];
+
+
+// ===== RENDER HELPERS =====
+function esc(s) {
+  if (s === undefined || s === null) return '';
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function priceTagLabel(type) {
+  return type === 'announced' ? '已公布' : (type === 'pending' ? '待官方' : '未公布');
+}
+
+function renderCarRow(car) {
+  return `<div class="car-row">
+    <div>
+      <div class="car-name">${esc(car.name)}${car.eu ? ' <span class="eu-badge">🇪🇺 EU</span>' : ''}</div>
+      <div class="car-brand">${esc(car.brand)}</div>
+      <div class="car-segment">${esc(car.segment)}</div>
+    </div>
+    <div>
+      <div class="power-label">${esc(car.power)}</div>
+      <div class="power-desc">${esc(car.battery)}</div>
+    </div>
+    <div>
+      <div class="size-label">L×W×H · WB</div>
+      <div class="size-value">${esc(car.size)}</div>
+    </div>
+    <div>
+      <span class="price-tag ${car.priceType}">${priceTagLabel(car.priceType)}</span>
+      <div class="price-value">${esc(car.price)}</div>
+      ${car.priceNote && car.priceNote !== '—' ? `<div class="price-note">${esc(car.priceNote)}</div>` : ''}
+    </div>
+    <div>
+      <div class="diff-text">${esc(car.diff)}</div>
+      <div class="src-text">SRC · ${esc(car.src)}</div>
+    </div>
+  </div>`;
+}
+
+function renderTechRow(item) {
+  return `<div class="tech-row">
+    <div><span class="vendor-name">${esc(item.vendor)}</span>${item.eu ? ' <span class="eu-badge">🇪🇺</span>' : ''}</div>
+    <div class="tech-cell-name">${esc(item.name)}</div>
+    <div class="tech-cell-metric">${esc(item.metric)}</div>
+    <div class="tech-cell-car"><div class="mini-label">首搭</div>${esc(item.firstCar)}</div>
+    <div class="tech-cell-time"><div class="mini-label">量产</div>${esc(item.timeline)}</div>
+  </div>`;
+}
+
+function renderSuppCard(s, i) {
+  return `<div class="supp-card">
+    <div>
+      <div class="supp-num">0${i + 1}</div>
+      <div class="supp-name">${esc(s.name)}</div>
+    </div>
+    <div class="supp-event">${esc(s.event)}</div>
+    <div class="supp-detail">${esc(s.detail)}</div>
+    <div class="supp-eu">${s.eu ? '<span class="eu-badge">🇪🇺 EU</span>' : ''}</div>
+  </div>`;
+}
+
+function renderTaCard(t, i) {
+  const featured = i === 0 ? ' featured' : '';
+  return `<div class="ta-card${featured}">
+    <div class="ta-num">${esc(t.num)}</div>
+    <div>
+      <h3 class="ta-title">${esc(t.title)}</h3>
+      <p class="ta-body">${esc(t.body)}</p>
+      <div class="ta-tags">${t.tags.map(tag => `<span class="ta-tag">${esc(tag)}</span>`).join('')}</div>
+    </div>
+  </div>`;
+}
+
+// ===== RENDER =====
+function renderCars(filter) {
+  let cars;
+  if (filter === 'all') cars = [...CARS_CHINA, ...CARS_GERMAN];
+  else if (filter === 'german') cars = CARS_GERMAN;
+  else cars = CARS_CHINA;
+  document.getElementById('car-table').innerHTML = cars.map(renderCarRow).join('');
+}
+
+function renderTech() {
+  const html = TECH.map((group, gi) => `
+    <div class="tech-group">
+      <div class="tech-group-head">
+        <span class="tech-num">0${gi + 1}</span>
+        <h3 class="tech-title">${esc(group.category)}</h3>
+        <span class="tech-cnt">· ${group.items.length} 项</span>
+      </div>
+      <div class="tech-table-head">
+        <div>发布方</div><div>技术名称</div><div>关键指标</div><div>首搭车型</div><div>量产时间</div>
+      </div>
+      <div class="tech-table">${group.items.map(renderTechRow).join('')}</div>
+    </div>
+  `).join('');
+  document.getElementById('tech-groups').innerHTML = html;
+}
+
+function renderSupp() {
+  document.getElementById('supp-grid').innerHTML = SUPPLIERS.map(renderSuppCard).join('');
+}
+
+function renderTa() {
+  document.getElementById('ta-grid').innerHTML = TAKEAWAYS.map(renderTaCard).join('');
+}
+
+// ===== TAB SWITCH =====
+function switchTab(name) {
+  document.querySelectorAll('.nav .tab').forEach(b =>
+    b.classList.toggle('active', b.dataset.tab === name));
+  ['cars', 'tech', 'suppliers', 'takeaway'].forEach(t => {
+    document.getElementById('section-' + t).classList.toggle('hidden', t !== name);
+  });
+}
+
+function switchFilter(filter) {
+  document.querySelectorAll('.filter-row .tab').forEach(b =>
+    b.classList.toggle('active', b.dataset.filter === filter));
+  renderCars(filter);
+}
+
+// ===== INIT =====
+const announcedCount = [...CARS_CHINA, ...CARS_GERMAN].filter(c => c.priceType === 'announced').length;
+document.getElementById('stat-priced').textContent = announcedCount;
+document.getElementById('stat-watched').textContent = CARS_CHINA.length + CARS_GERMAN.length;
+
+document.getElementById('cars-count').textContent = CARS_CHINA.length + CARS_GERMAN.length;
+document.getElementById('tech-count').textContent = TECH.reduce((a, c) => a + c.items.length, 0);
+document.getElementById('supp-count').textContent = SUPPLIERS.length;
+document.getElementById('china-count').textContent = CARS_CHINA.length;
+document.getElementById('german-count').textContent = CARS_GERMAN.length;
+document.getElementById('all-count').textContent = CARS_CHINA.length + CARS_GERMAN.length;
+
+document.querySelectorAll('.nav .tab').forEach(b =>
+  b.addEventListener('click', () => switchTab(b.dataset.tab)));
+document.querySelectorAll('.filter-row .tab').forEach(b =>
+  b.addEventListener('click', () => switchFilter(b.dataset.filter)));
+
+renderCars('china');
+renderTech();
+renderSupp();
+renderTa();
+
+// ===== WATERMARK =====
+(function renderWatermark() {
+  const grid = document.getElementById('watermark');
+  const cells = 120; // enough to cover rotated viewport
+  let html = '<div class="watermark-grid">';
+  for (let i = 0; i < cells; i++) {
+    html += '<div class="watermark-text">车型产品部 · 海外组 · INTERNAL</div>';
+  }
+  html += '</div>';
+  grid.innerHTML = html;
+})();
+</script>
+</body>
+</html>
