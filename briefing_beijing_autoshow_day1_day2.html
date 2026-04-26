@@ -1,0 +1,3226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2026 北京车展 · Day 1 + Day 2 合并简报 · 车型产品部 · 海外组</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'PingFang SC', -apple-system, 'Microsoft YaHei', 'SF Pro SC', sans-serif;
+    background: #f7f5f0;
+    color: #1a1a1a;
+    line-height: 1.55;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 顶栏 ===== */
+header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2520 100%);
+    color: #f4e4bc;
+    padding: 32px 48px;
+    border-bottom: 4px solid #d4a942;
+    position: relative;
+    overflow: hidden;
+}
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -10%;
+    width: 600px; height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(212,169,66,0.05));
+    transform: rotate(20deg);
+    pointer-events: none;
+}
+.header-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+    position: relative;
+}
+h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+    margin-bottom: 6px;
+}
+h1 small {
+    display: block;
+    font-size: 13px;
+    color: #d4a942;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.subtitle {
+    color: #c9b896;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.subtitle b { color: #f4e4bc; }
+.header-meta {
+    text-align: right;
+    color: #c9b896;
+    font-size: 12px;
+    line-height: 1.7;
+}
+.header-meta .stamp {
+    display: inline-block;
+    background: rgba(212,169,66,0.15);
+    border: 1px solid rgba(212,169,66,0.4);
+    color: #f4e4bc;
+    padding: 4px 12px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ===== 统计卡片 ===== */
+.stats-bar {
+    background: #fff;
+    padding: 18px 48px;
+    border-bottom: 1px solid #e5dfd2;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 16px;
+}
+.stat {
+    text-align: center;
+    border-right: 1px solid #efebe0;
+    padding: 4px 0;
+}
+.stat:last-child { border-right: none; }
+.stat-num {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+.stat-num.gold { color: #d4a942; }
+.stat-num.red { color: #d97706; }
+.stat-label {
+    display: block;
+    font-size: 11px;
+    color: #6b6760;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+}
+
+/* ===== TOC ===== */
+nav.toc {
+    background: #fff;
+    padding: 14px 48px;
+    border-bottom: 1px solid #e5dfd2;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.toc-grid {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.toc a {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 14px;
+    transition: all 0.15s;
+    border: 1px solid transparent;
+}
+.toc a:hover {
+    background: #f4e4bc;
+    color: #1a1a1a;
+    border-color: #d4a942;
+}
+
+/* ===== 主内容 ===== */
+main {
+    padding: 32px 48px 48px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+section {
+    background: #fff;
+    margin-bottom: 28px;
+    padding: 28px 32px;
+    border-radius: 4px;
+    border-left: 3px solid #d4a942;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+section.highlight {
+    background: linear-gradient(180deg, #fdf8e8 0%, #fff 50%);
+    border-left: 4px solid #d97706;
+}
+section h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+section h2 .sec-no {
+    font-size: 11px;
+    color: #d4a942;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+section .sec-sub {
+    color: #6b6760;
+    font-size: 13px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #e5dfd2;
+}
+
+/* ===== Filter Bar ===== */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 12px;
+    background: #faf8f2;
+    border-radius: 4px;
+    align-items: center;
+}
+.filter-bar label {
+    font-size: 12px;
+    color: #6b6760;
+    margin-right: 4px;
+    font-weight: 600;
+}
+.filter-bar button {
+    background: #fff;
+    border: 1px solid #d6cfbf;
+    color: #4a4a4a;
+    padding: 5px 14px;
+    font-size: 12px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+.filter-bar button:hover {
+    background: #f4e4bc;
+    border-color: #d4a942;
+}
+.filter-bar button.active {
+    background: #1a1a1a;
+    color: #f4e4bc;
+    border-color: #1a1a1a;
+}
+.filter-bar button.active.d2-btn {
+    background: #d97706;
+    border-color: #d97706;
+    color: #fff;
+}
+.filter-bar button.active.vw-btn {
+    background: #d4a942;
+    border-color: #d4a942;
+    color: #1a1a1a;
+}
+
+/* ===== 车型卡片 Grid ===== */
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 16px;
+}
+.car-card {
+    background: #fff;
+    border: 1px solid #e5dfd2;
+    border-radius: 4px;
+    padding: 14px 16px;
+    transition: box-shadow 0.15s;
+    border-left: 3px solid #ccc;
+}
+.car-card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.car-card[data-day="D2"] {
+    border-left-color: #d97706;
+    background: linear-gradient(180deg, #fff8e8 0%, #fff 30%);
+}
+.car-card[data-day="D1*"] {
+    border-left-color: #c9a85d;
+}
+.car-card[data-day="D1"] {
+    border-left-color: #5a8c3d;
+}
+.car-card[data-day="D1+D2"] {
+    border-left-color: #d97706;
+    background: linear-gradient(180deg, #fff8e8 0%, #fff 50%);
+}
+.car-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+}
+.day-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+}
+.day-badge.day-d1 { background: #5a8c3d; color: #fff; }
+.day-badge.day-d1-missed { background: #c9a85d; color: #fff; }
+.day-badge.day-d2 { background: #d97706; color: #fff; }
+.car-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    flex: 1;
+    line-height: 1.3;
+}
+.eu-tag {
+    background: #1e3a5f;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+.eu-tag-sm {
+    background: #1e3a5f;
+    color: #fff;
+    font-size: 9px;
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-weight: 600;
+    margin-left: 4px;
+}
+.car-meta {
+    font-size: 12px;
+    color: #6b6760;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+.car-meta .brand { color: #1a1a1a; font-weight: 600; }
+.car-spec {
+    width: 100%;
+    font-size: 12px;
+    border-collapse: collapse;
+}
+.car-spec td {
+    padding: 4px 0;
+    border-bottom: 1px solid #f4f0e6;
+    vertical-align: top;
+    line-height: 1.45;
+}
+.car-spec td:first-child {
+    color: #8a8479;
+    font-weight: 600;
+    width: 70px;
+    white-space: nowrap;
+    padding-right: 10px;
+}
+.car-src {
+    font-size: 10.5px;
+    color: #a09a8e;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* ===== VW 重点突出 ===== */
+.vw-highlight {
+    background: linear-gradient(135deg, #fdf8e8 0%, #faf0d8 100%);
+    border: 2px solid #d4a942;
+    padding: 18px 22px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    position: relative;
+}
+.vw-highlight::before {
+    content: '★';
+    position: absolute;
+    top: 12px; right: 16px;
+    font-size: 24px;
+    color: #d4a942;
+}
+.vw-highlight h3 {
+    font-size: 17px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+.vw-highlight p {
+    font-size: 13.5px;
+    color: #4a4a4a;
+    line-height: 1.7;
+}
+.vw-highlight b { color: #d97706; }
+
+/* ===== 表格 ===== */
+table.report-tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+}
+table.report-tbl thead {
+    background: #1a1a1a;
+    color: #f4e4bc;
+}
+table.report-tbl th {
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    border-right: 1px solid #2a2520;
+}
+table.report-tbl th:last-child { border-right: none; }
+table.report-tbl td {
+    padding: 10px 12px;
+    vertical-align: top;
+    border-bottom: 1px solid #efebe0;
+    line-height: 1.5;
+}
+table.report-tbl tbody tr:nth-child(even) { background: #faf8f2; }
+table.report-tbl tbody tr:hover { background: #fdf8e8; }
+table.report-tbl tbody tr[data-day="D2"] {
+    background: linear-gradient(90deg, #fff8e8 0%, #fff 100%);
+    border-left: 3px solid #d97706;
+}
+.signal {
+    color: #4a4a4a;
+    font-style: italic;
+}
+.signal b { color: #d97706; font-style: normal; }
+.src-cell {
+    color: #8a8479;
+    font-size: 11px;
+    white-space: nowrap;
+}
+.tech-name {
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 12.5px;
+}
+.cat-tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 7px;
+    background: #f4e4bc;
+    color: #6b5520;
+    border-radius: 2px;
+    font-weight: 600;
+}
+.d2-cell {
+    color: #1a1a1a;
+    font-weight: 500;
+}
+.d2-cell b { color: #d97706; }
+
+/* ===== Takeaway ===== */
+.takeaways {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+.takeaway-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2520 100%);
+    color: #f4e4bc;
+    padding: 22px 26px;
+    border-radius: 4px;
+    border-left: 4px solid #d4a942;
+}
+.takeaway-card h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #fff;
+}
+.takeaway-num {
+    display: inline-block;
+    background: #d4a942;
+    color: #1a1a1a;
+    font-weight: 800;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 12px;
+    margin-right: 8px;
+}
+.takeaway-card p {
+    font-size: 13px;
+    line-height: 1.75;
+    color: #d4cdb8;
+}
+.takeaway-card b { color: #f4e4bc; }
+
+/* ===== 漏报清单 ===== */
+.missed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 4px 14px;
+    background: #fef9e8;
+    padding: 16px 20px;
+    border-radius: 4px;
+    border: 1px solid #f0d97a;
+}
+.missed-item {
+    font-size: 12px;
+    color: #6b5520;
+    padding: 3px 0;
+    line-height: 1.5;
+}
+.missed-item::before {
+    content: '✓ ';
+    color: #c9a85d;
+    font-weight: 700;
+}
+
+/* ===== 页脚 ===== */
+footer {
+    background: #1a1a1a;
+    color: #8a8479;
+    padding: 28px 48px;
+    text-align: center;
+    font-size: 11.5px;
+    line-height: 1.8;
+    border-top: 4px solid #d4a942;
+}
+footer .stamp {
+    color: #d4a942;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+}
+footer a {
+    color: #d4a942;
+    text-decoration: none;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 1100px) {
+    main { padding: 24px 24px 32px; }
+    header { padding: 24px; }
+    .stats-bar { padding: 14px 24px; grid-template-columns: repeat(4, 1fr); }
+    .stat:nth-child(4) { border-right: none; }
+    nav.toc { padding: 12px 24px; }
+    section { padding: 22px 18px; }
+    .cars-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 24px; }
+    table.report-tbl { font-size: 11.5px; display: block; overflow-x: auto; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-grid">
+    <div>
+      <h1>
+        <small>BEIJING AUTO SHOW · DAY 1 + DAY 2 CONSOLIDATED BRIEFING</small>
+        2026 北京车展 · Day 1+2 合并增量简报
+      </h1>
+      <div class="subtitle">
+        <b>D1 (4/24) + D2 (4/25)</b> 滚动追踪 · 重点 <b>大众安徽与众系列 (与众 07/08/09)</b> + <b>D2 ID.ERA 9X 价格落地</b><br/>
+        合资品牌"中国供应链平台化"两日内基本完成锁定 · 整零同馆首次出现 · 追觅入局
+      </div>
+    </div>
+    <div class="header-meta">
+      <span class="stamp">INTERNAL</span><br/>
+      车型产品部 · 海外组<br/>
+      简报版本 v1.0 · 2026.04.25 22:00<br/>
+      <span style="color: #d4a942">车展期间滚动更新中</span>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat"><span class="stat-num">112</span><span class="stat-label">总条目</span></div>
+  <div class="stat"><span class="stat-num">108</span><span class="stat-label">D1 (4/24)</span></div>
+  <div class="stat"><span class="stat-num red">4</span><span class="stat-label">D2 (4/25) 当日</span></div>
+  <div class="stat"><span class="stat-num gold">17</span><span class="stat-label">大众集团</span></div>
+  <div class="stat"><span class="stat-num gold">3</span><span class="stat-label">大众安徽与众</span></div>
+  <div class="stat"><span class="stat-num">37</span><span class="stat-label">🇪🇺 EU 相关</span></div>
+  <div class="stat"><span class="stat-num">31</span><span class="stat-label">技术发布</span></div>
+</div>
+
+<nav class="toc">
+  <div class="toc-grid">
+    <a href="#exec">📋 执行摘要</a>
+    <a href="#vw">★ 大众集团专题</a>
+    <a href="#cn-cars">🇨🇳 中国品牌</a>
+    <a href="#germany-cars">🇩🇪 德系豪华</a>
+    <a href="#global-cars">🌐 全球品牌</a>
+    <a href="#tech">🔧 技术 / 平台</a>
+    <a href="#suppliers">🏭 供应商</a>
+    <a href="#updates">🔄 信息更新</a>
+    <a href="#takeaway">💡 Takeaway</a>
+    <a href="#missed">⚠️ Day 1 漏报</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============== 执行摘要 ============== -->
+<section id="exec" class="highlight">
+  <h2><span class="sec-no">SECTION 00</span>执行摘要 · Day 2 关键判断</h2>
+  <div class="sec-sub">基于 D1+D2 全部 112 条目的差量分析</div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px;">
+    <div style="background: #fff8e8; padding: 14px 18px; border-radius: 4px; border-left: 4px solid #d97706;">
+      <div style="font-size: 11px; color: #d97706; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px;">D2 价格落地 #1</div>
+      <div style="font-size: 14px; line-height: 1.6;"><b>ID.ERA 9X 正式上市</b><br/>¥30.98–35.98 万 · 限时权益 ¥29.98 万起 (比预售低 2 万) · <b>合资全尺寸增程旗舰锚定下移到 30 万以内</b></div>
+    </div>
+    <div style="background: #fff8e8; padding: 14px 18px; border-radius: 4px; border-left: 4px solid #d97706;">
+      <div style="font-size: 11px; color: #d97706; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px;">D2 关键发布 #2</div>
+      <div style="font-size: 14px; line-height: 1.6;"><b>地平线舱驾融合芯片 + 智能体 OS</b><br/>中国首款舱驾融合芯片；CATL 演示 6 分钟满电续航 1500km</div>
+    </div>
+    <div style="background: #fff8e8; padding: 14px 18px; border-radius: 4px; border-left: 4px solid #d97706;">
+      <div style="font-size: 11px; color: #d97706; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px;">D2 上市与时间确认</div>
+      <div style="font-size: 14px; line-height: 1.6;"><b>欧拉 5 / 宋 Pro 飞驰版 4/25 上市</b>; 启境 GT7 4/26 D3 预售 ¥28-35 万；腾势 D9 II 4/27 上市；理想 L9 Livis 5/15 上市</div>
+    </div>
+  </div>
+
+  <div style="background: #f4e4bc; padding: 14px 18px; border-radius: 4px; border: 1px solid #d4a942;">
+    <div style="font-size: 11px; color: #6b5520; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px;">★ 战略判断</div>
+    <div style="font-size: 13.5px; line-height: 1.7;">
+    <b>大众集团 D1+D2 同步推 5 款 CEA 架构车型</b> (与众 07/08/09 + ID.AURA T6 + ID.ERA 9X)，是合资 3.0 代表事件——18 个月开发周期、2027 起 CEA 覆盖纯电+插混+增程多平台、控制单元 -30%。叠加 BBA + 现代 + 长安马自达 + 日产 + Smart 同步与 Momenta/CATL/地平线/字节/百度深度绑定，<b>合资品牌"中国供应链平台化"两日内基本完成锁定</b>。<br/>
+    🇪🇺 <b>对欧洲市场情报含义</b>: 欧洲市场从中国出口的合资车型将自动捆绑中国供应链栈；Momenta 正同时供应 BMW + AUDI + 现代 + 大众 + 北汽 + 日产 + 智己 7 大集团。
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== 大众集团专题 ============== -->
+<section id="vw" class="highlight">
+  <h2><span class="sec-no">SECTION 01</span>★ 大众集团专题 · 与众系列 + CEA 架构</h2>
+  <div class="sec-sub">三大合资体系全面亮相 · CEA 架构落地 · D2 ID.ERA 9X 价格正式公布</div>
+
+  <div class="vw-highlight">
+    <h3>★ 关键判断: 大众-小鹏 CEA 架构 2 天内系统性落地</h3>
+    <p>
+      <b>大众安徽与众 07/08/09 + 一汽-大众 ID.AURA T6 + 上汽大众 ID.ERA 9X 全部基于 CEA</b> (CARIAD 中国 + 小鹏 + 地平线酷睿程联合开发)，<b>开发周期 18 个月、控制单元 -30%</b>。
+      <br/><br/>
+      ⭐ <b>D2 4/25 真正的价格落地</b>: ID.ERA 9X 正式上市 ¥30.98–35.98 万 / 限时权益 29.98–34.98 万 (比预售低 2 万)，将合资品牌全尺寸增程旗舰价格锚定下移到 30 万以内。
+      <br/><br/>
+      ⭐ <b>2027 年起 CEA 将逐步覆盖大众多平台</b> (纯电+插混+增程)，🇪🇺 电子电气架构本土化"奇点时刻"已在本届车展锁定。
+      <br/><br/>
+      <b>三家合资分工</b>: 大众安徽与众 = 年轻先锋 (BEV)；一汽-大众 ID.AURA = 智能普惠 (BEV)；上汽大众 ID.ERA = 高端旗舰 (EREV)。
+    </p>
+  </div>
+
+  <div class="cars-grid">
+    <div class="car-card" data-day="D1" data-region="vw" data-cat="大众安徽 与众">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">与众 08</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">大众安徽 (与众)</span> · <span class="seg">C 级中大型 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 800V SiC</td></tr>
+        <tr><td>三电</td><td>CLTC >700km / 730km Max</td></tr>
+        <tr><td>尺寸·轴距</td><td>5000×1954×1688 · 3030</td></tr>
+        <tr><td>价格</td><td><b>¥22.99–28.99 万 (4/16 上市)</b></td></tr>
+        <tr><td>差异点</td><td>⭐ 大众-小鹏首款联合开发车型；首款 800V 平台纯电 SUV；前后双图灵 AI 芯片 1500 TOPS + 小鹏 VLA 一段式端到端；双腔空悬+DCC+AI 魔毯预瞄；布雷博四活塞固定卡钳；UNYX SOUND 20 扬声器 7.1.4 杜比全景声；智谱+文心大模型</td></tr>
+      </table>
+      <div class="car-src">📰 太平洋 / 汽车之家 / 凤凰网</div>
+    </div><div class="car-card" data-day="D1" data-region="vw" data-cat="大众安徽 与众">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">与众 09</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">大众安徽 (与众)</span> · <span class="seg">B 级纯电轿跑</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV (预期 230kW)</td></tr>
+        <tr><td>三电</td><td>预期 82.4 / 95.0 kWh / 续航 630/700/730 km</td></tr>
+        <tr><td>尺寸·轴距</td><td>车长近 5m</td></tr>
+        <tr><td>价格</td><td><b>待定 (2026 下半年上市)</b></td></tr>
+        <tr><td>差异点</td><td>⭐ 大众-小鹏第二款联合车 · <b>24 个月开发周期</b>；溜背轿跑；增强版 L2+ 城区领航 (酷睿程)；CEA 架构+本地训练 LLM 智能体；驾舱一体；4/21 媒体之夜全球首发</td></tr>
+      </table>
+      <div class="car-src">📰 汽车之家 / 大众官方</div>
+    </div><div class="car-card" data-day="D1" data-region="vw" data-cat="大众安徽 与众">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">与众 07</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">大众安徽 (与众)</span> · <span class="seg">中型纯电运动轿车 (掀背)</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 后置单电机 170kW</td></tr>
+        <tr><td>三电</td><td>59.9 kWh / CLTC 558km</td></tr>
+        <tr><td>尺寸·轴距</td><td>4853×1852×1566 · 2826</td></tr>
+        <tr><td>价格</td><td><b>待定 (Q2 上市)</b></td></tr>
+        <tr><td>差异点</td><td>⭐ CEA 架构第二款；<b>4/24 D1 全球首秀</b>；行李厢 1580L 同级领先；高速 NOA + 记忆泊车；四屏联动；金色装饰；可定制 HMI；后续推双电机四驱</td></tr>
+      </table>
+      <div class="car-src">📰 ZAKER / 凤凰网 / 汽车之家</div>
+    </div><div class="car-card" data-day="D1" data-region="vw" data-cat="一汽-大众">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">ID. AURA T6</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">一汽-大众</span> · <span class="seg">B 级纯电中型 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定 (预期 19–26 万)</b></td></tr>
+        <tr><td>差异点</td><td>⭐ <b>大众品牌首款搭载激光雷达的纯电 SUV</b>；首搭 CEA 电子电气架构 (中央计算+区域控制)；酷睿程 (大众 CARIAD+地平线) 全新高端智驾；4/21 大众媒体之夜首发 + 4/24 车展正式公开亮相；薄荷主题外观；20" 轮毂；半隐藏门把手；ID.AURA 序列今年再推 1 款</td></tr>
+      </table>
+      <div class="car-src">📰 凤凰网 / 汽车之家 / 易车</div>
+    </div><div class="car-card" data-day="D1" data-region="vw" data-cat="一汽-大众">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">全新 速腾 S</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">一汽-大众</span> · <span class="seg">A+ 级燃油轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>燃油</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥7.98 万起 (上市)</b></td></tr>
+        <tr><td>差异点</td><td>速腾家族新成员；20 年国民家轿新体验</td></tr>
+      </table>
+      <div class="car-src">📰 扬子晚报</div>
+    </div><div class="car-card" data-day="D1" data-region="vw" data-cat="一汽-大众">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">全新 揽巡</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">一汽-大众</span> · <span class="seg">中大型 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>燃油 / PHEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>大五座 SUV 焕新；车长 >5m</td></tr>
+      </table>
+      <div class="car-src">📰 新浪</div>
+    </div><div class="car-card" data-day="D1" data-region="vw" data-cat="一汽-大众">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">探岳 L PHEV</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">一汽-大众</span> · <span class="seg">B 级 PHEV SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>PHEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>探岳家族 PHEV</td></tr>
+      </table>
+      <div class="car-src">📰 凤凰网</div>
+    </div><div class="car-card" data-day="D1" data-region="vw" data-cat="一汽-大众">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">迈腾 PHEV</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">一汽-大众</span> · <span class="seg">B 级 PHEV 轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>PHEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>迈腾家族 PHEV</td></tr>
+      </table>
+      <div class="car-src">📰 凤凰网</div>
+    </div><div class="car-card" data-day="D1+D2" data-region="vw" data-cat="上汽大众">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1+D2</span>
+        <span class="car-name">ID. ERA 9X</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">上汽大众</span> · <span class="seg">D 级全尺寸增程 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>EREV (EA211 Evo II 1.5T 增程器，热效率 41%) + 双电机四驱 380kW</td></tr>
+        <tr><td>三电</td><td>CLTC 纯电 >400km / 综合 >1600km / 亏电 6.27L / 0-100 5.6s</td></tr>
+        <tr><td>尺寸·轴距</td><td>5207×1997×1810 · 3070</td></tr>
+        <tr><td>价格</td><td><b>¥30.98–35.98 万 (D2 4/25 正式上市) · 限时权益 ¥29.98–34.98 万</b></td></tr>
+        <tr><td>差异点</td><td>⭐ <b>大众首款全尺寸增程 SUV</b>；<b>D2 4/25 价格落地</b>(预售 32.98–37.98 万→正式 30.98–35.98 万)；全球首发 Momenta R7 强化学习世界模型；192 线激光雷达 + 26 个感知传感器；2+2+2 六座；Smart Surface 魔术屏；后轮主动转向 (转弯 4.85m)；行云智行；星球大战联名版；风阻 0.253</td></tr>
+      </table>
+      <div class="car-src">📰 中国证券报 / 中金在线 / 汽车之家</div>
+    </div><div class="car-card" data-day="D1" data-region="vw" data-cat="上汽大众">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">帕萨特 ePro</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">上汽大众</span> · <span class="seg">B 级 PHEV 轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>PHEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>帕萨特家族 PHEV</td></tr>
+      </table>
+      <div class="car-src">📰 凤凰网</div>
+    </div><div class="car-card" data-day="D1" data-region="vw" data-cat="上汽大众">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">途观 L ePro</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">上汽大众</span> · <span class="seg">B 级 PHEV SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>PHEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>途观家族 PHEV</td></tr>
+      </table>
+      <div class="car-src">📰 凤凰网</div>
+    </div><div class="car-card" data-day="D1" data-region="vw" data-cat="奥迪">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">AUDI E7X</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">上汽奥迪 (字母标)</span> · <span class="seg">C 级大五座 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 900V (300/500 kW)</td></tr>
+        <tr><td>三电</td><td>宁德 109 kWh / CLTC 615/751km / 10min 320km / 0-100 3.97s</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定 (上半年上市)</b></td></tr>
+        <tr><td>差异点</td><td>⭐ AUDI 字母标第二款；超 1000 个三角光学单元环形灯面；Momenta R7 飞轮大模型；电动 quattro 四驱 500kW；未来 L3；元宇紫专属漆色；🇪🇺 D2 现场公开内饰</td></tr>
+      </table>
+      <div class="car-src">📰 汽车之家 / 节点 Auto</div>
+    </div><div class="car-card" data-day="D1*" data-region="vw" data-cat="奥迪">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">全新一代 A6L (C9)</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">一汽-奥迪</span> · <span class="seg">C 级豪华燃油轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>燃油 PPC 平台</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥32.29 万起 (上市，比上代直降 10.5 万)</b></td></tr>
+        <tr><td>差异点</td><td>搭载华为乾崑辅助驾驶系统 + 激光雷达；首款搭华为智驾的豪华燃油车；🇪🇺 价格屠夫</td></tr>
+      </table>
+      <div class="car-src">📰 凤凰网</div>
+    </div><div class="car-card" data-day="D1*" data-region="vw" data-cat="奥迪">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">奥迪 A6L e-tron</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">一汽-奥迪</span> · <span class="seg">C 级纯电轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV PPE 平台 800V</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥30.98–43.98 万 (4/10 上市)</b></td></tr>
+        <tr><td>差异点</td><td>4/10 已上市，车展现场展出</td></tr>
+      </table>
+      <div class="car-src">📰 新浪</div>
+    </div><div class="car-card" data-day="D1*" data-region="vw" data-cat="奥迪">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">奥迪 SQ8 / S5 Avant</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">奥迪</span> · <span class="seg">高性能 SUV / 旅行车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>车展期间上市</b></td></tr>
+        <tr><td>差异点</td><td>SQ8 双电机 4WD 零百 <4s；S5 Avant 中国首秀</td></tr>
+      </table>
+      <div class="car-src">📰 新浪</div>
+    </div><div class="car-card" data-day="D1" data-region="vw" data-cat="捷达">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">捷达 JETTA X 概念车</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">一汽-大众捷达</span> · <span class="seg">纯电概念</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>概念车</b></td></tr>
+        <tr><td>差异点</td><td>Modern Robust 设计语言；切入入门级智能电动车</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D2" data-region="vw" data-cat="上汽大众">
+      <div class="car-head">
+        <span class="day-badge day-d2">D2</span>
+        <span class="car-name">ID. ERA 9X 正式上市 (D2)</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">上汽大众</span> · <span class="seg">D 级全尺寸增程 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>**¥30.98–35.98 万 (D2 4/25 上市) · 限时权益 ¥29.98–34.98 万 · 比预售低 2 万**</b></td></tr>
+        <tr><td>差异点</td><td>⭐ <b>D2 真正的价格落地</b>: 预售 32.98–37.98 万 → 正式 30.98–35.98 万 (推出 3 款车型 / 入门下探 2 万) · 限时权益 29.98 万起，低于 30 万 · 提供星球大战联名版 (10000 元智能光语踏板赠送)</td></tr>
+      </table>
+      <div class="car-src">📰 中金在线 / 汽车之家</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== 中国品牌 ============== -->
+<section id="cn-cars">
+  <h2><span class="sec-no">SECTION 02</span>🇨🇳 中国品牌新车 · D1+D2 全景</h2>
+  <div class="sec-sub">68 款车型 · 含 Day 1 漏报补全 · 鸿蒙智行 / 比亚迪 / 长城 / 红旗 / 长安 / 吉利 / 奇瑞 / 上汽 / 北汽 / 东风</div>
+
+  <div class="filter-bar">
+    <label>筛选</label>
+    <button class="filter-btn active" data-filter="all">全部</button>
+    <button class="filter-btn d2-btn" data-filter="D2">仅 D2 (4/25)</button>
+    <button class="filter-btn" data-filter="D1">D1 已收录</button>
+    <button class="filter-btn" data-filter="D1*">D1 漏报补全</button>
+  </div>
+
+  <div class="cars-grid" id="cn-grid">
+    <div class="car-card" data-day="D1" data-region="cn" data-cat="新势力">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">小米 Vision GT</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">小米</span> · <span class="seg">双门纯电概念超跑</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 概念</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>概念车</b></td></tr>
+        <tr><td>差异点</td><td>第 51 台 VGT 概念车，山内一典邀约打造</td></tr>
+      </table>
+      <div class="car-src">📰 新浪 / 雷军微博</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="新势力">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">小米 YU7 GT</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">小米</span> · <span class="seg">高性能 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 双电机四驱 / 零百 3 秒级</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定 (5月底发布)</b></td></tr>
+        <tr><td>差异点</td><td>5月底正式发布，预期 30 万级高性能纯电轿跑 SUV</td></tr>
+      </table>
+      <div class="car-src">📰 雷军微博 / 网易</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="新势力">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">SU7 / SU7 Ultra / YU7</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">小米</span> · <span class="seg">在售展车 + Vision GT 国内首秀</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>已售</b></td></tr>
+        <tr><td>差异点</td><td>全系参展，新研发中心吸纳原宝马/保时捷/兰博基尼专家</td></tr>
+      </table>
+      <div class="car-src">📰 小米官方</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="鸿蒙智行">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">尚界 Z7 / Z7T</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">尚界 (华为+上汽)</span> · <span class="seg">C 级纯电轿跑 / 猎装</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 800V 巨鲸平台 / 后驱+四驱</td></tr>
+        <tr><td>三电</td><td>CATL 81/100 kWh / CLTC 905/873 km / 4 区零百 3.44s</td></tr>
+        <tr><td>尺寸·轴距</td><td>5036×1976×1465 · 3000</td></tr>
+        <tr><td>价格</td><td><b>¥21.88 万 / 22.88 万 (4/22 上市限时优惠)</b></td></tr>
+        <tr><td>差异点</td><td>全系标配 ADS 4.1 + 896 线激光雷达；24h 小订突破 6 万</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家 / 第一电动</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="鸿蒙智行">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">问界 M6</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">问界</span> · <span class="seg">C 级中大型 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>EREV / BEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>4960×1985×1736 · 2950, 风阻 0.239</td></tr>
+        <tr><td>价格</td><td><b>¥25.98–29.98 万 (4/22 上市)</b></td></tr>
+        <tr><td>差异点</td><td>问界品牌年轻化产品线；千面晶曜大灯</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="鸿蒙智行">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">智界 V9</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">智界 (奇瑞+华为)</span> · <span class="seg">D 级 7 座旗舰 MPV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 800V SiC + EREV 雪鸮</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>5359×2009×1879 · 3250</td></tr>
+        <tr><td>价格</td><td><b>¥39.98–52.98 万 (4/22 预售 · 1 小时订单破 1.25 万)</b></td></tr>
+        <tr><td>差异点</td><td>全系 ADS 4.1 + 896 线激光雷达；二排 123° 双零重力支持 45/90/180° 旋转；车载制氧机；后轮主动转向</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐 / 易车 / 凤凰网</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="鸿蒙智行">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">全新一代 问界 M9</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">问界</span> · <span class="seg">D 级旗舰 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV / EREV</td></tr>
+        <tr><td>三电</td><td>增程 60/75 kWh，纯电 120 kWh</td></tr>
+        <tr><td>尺寸·轴距</td><td>5285×2026×1845 · 3125</td></tr>
+        <tr><td>价格</td><td><b>预售开启 (Ultimate 版突破 60 万)</b></td></tr>
+        <tr><td>差异点</td><td>6 颗激光雷达 (含华为自研 896 线前向 + 4 颗固态)；全主动悬架</td></tr>
+      </table>
+      <div class="car-src">📰 易车 / 36氪</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="鸿蒙智行 (华为生态)">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">奕境 X9</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">奕境 (东风+华为)</span> · <span class="seg">D 级大六座 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV / EREV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>5300×—×— · 3100</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>华为乾崑全栈方案；896 线激光 + XMC 数字底盘 + HarmonySpace 6</td></tr>
+      </table>
+      <div class="car-src">📰 汽车之家</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="鸿蒙智行 (华为生态)">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">启境 GT7</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">启境 (广汽+华为)</span> · <span class="seg">C 级纯电猎装</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 全栈乾崑</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>车长约 5m</td></tr>
+        <tr><td>价格</td><td><b>待定 (4/26 D3 预售 ¥28–35 万)</b></td></tr>
+        <tr><td>差异点</td><td>获广州 L3 路测许可；首发 ADS 5 + HarmonySpace 6 + XMC 3.0 数字底盘引擎</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家 / 搜狐</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="比亚迪">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">大唐 EV</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">比亚迪 王朝网</span> · <span class="seg">D 级 7 座旗舰 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 1000V 超级 e 平台 / 单电机+双电机四驱</td></tr>
+        <tr><td>三电</td><td>第二代刀片 + 兆瓦闪充 5min 补能 400km · CLTC 950 km</td></tr>
+        <tr><td>尺寸·轴距</td><td>5263–5302×1999×1790 · 3130</td></tr>
+        <tr><td>价格</td><td><b>¥25–32 万 (预售) · 5 月上市</b></td></tr>
+        <tr><td>差异点</td><td>全球首搭 10C 闪充；天神之眼 5.0 + 后轮转向 + 云辇-A；3.9s 零百</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家 / 易车 / 新浪</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="比亚迪">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">仰望 U9 Xtreme &quot;破晓时刻&quot;</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">仰望</span> · <span class="seg">超跑限量</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>4 电机 EV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>全球限量 30 台</b></td></tr>
+        <tr><td>差异点</td><td>极速 496.22 km/h；纽北 6′59″ 圈速</td></tr>
+      </table>
+      <div class="car-src">📰 Z 汽车</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="比亚迪">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">仰望 U8L 鼎藏版</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">仰望</span> · <span class="seg">D 级 4 座行政 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>4 电机</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>全尺寸豪华行政；4 座布局重塑东方豪华</td></tr>
+      </table>
+      <div class="car-src">📰 Z 汽车</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="比亚迪">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">方程豹 FORMULA X / 方程 S / SL</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">方程豹</span> · <span class="seg">超跑 + 性能轿跑 + 旅行车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>3 电机峰值近 1000 hp</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>车长 >5m</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>方程豹首款轿跑；全碳纤车身 + 剪刀门</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐 / 网通社</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="比亚迪">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">海豹 08</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">比亚迪 海洋网</span> · <span class="seg">C 级中大型轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 800V / PHEV</td></tr>
+        <tr><td>三电</td><td>二代刀片 / 纯电续航 >900 km</td></tr>
+        <tr><td>尺寸·轴距</td><td>5150×—×— · 3030</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>海洋网旗舰轿车；四驱 694 hp</td></tr>
+      </table>
+      <div class="car-src">📰 新浪</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="比亚迪">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">海狮 08</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">比亚迪 海洋网</span> · <span class="seg">C 级 5/6 座大 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 1000V / PHEV</td></tr>
+        <tr><td>三电</td><td>纯电续航 900 km, PHEV 综合 1000 km</td></tr>
+        <tr><td>尺寸·轴距</td><td>5115×—×— · 3030</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>云辇-A + 双腔空悬 + 后轮转向；二代刀片</td></tr>
+      </table>
+      <div class="car-src">📰 新浪</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="比亚迪">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">第三代 元 PLUS</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">比亚迪 王朝网</span> · <span class="seg">A0/A 级 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 800V 闪充</td></tr>
+        <tr><td>三电</td><td>CLTC 630 km</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>14.98 万元起 (预售)</b></td></tr>
+        <tr><td>差异点</td><td>800V 闪充全系标配下放 A 级</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="比亚迪">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">腾势 Z9 GT 敞篷超跑版</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">腾势</span> · <span class="seg">C 级敞篷超跑</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>概念展示</b></td></tr>
+        <tr><td>差异点</td><td>Z9 GT 派生车型</td></tr>
+      </table>
+      <div class="car-src">📰 Z 汽车</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="比亚迪">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">第二代 腾势 D9</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">腾势</span> · <span class="seg">D 级 MPV 旗舰</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥38.98 万起 (预售) · D2 确认 4/27 上市</b></td></tr>
+        <tr><td>差异点</td><td>第二代 D9 焕新，D2 上市日期落地</td></tr>
+      </table>
+      <div class="car-src">📰 易车</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="新势力">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">小鹏 GX</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">小鹏</span> · <span class="seg">C 级 6 座 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 800V SiC + EREV</td></tr>
+        <tr><td>三电</td><td>增程综合 1585km / 纯电 750km</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥39.98 万 (预售) · 二季度上市</b></td></tr>
+        <tr><td>差异点</td><td>4× 自研图灵芯片 3000 TOPS；预埋 L4；首款前装量产 Robotaxi 原型；博世全球首发线控转向</td></tr>
+      </table>
+      <div class="car-src">📰 新浪</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="新势力">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">蔚来 ES9</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">蔚来</span> · <span class="seg">D 级旗舰 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 900V</td></tr>
+        <tr><td>三电</td><td>3 分钟换电；电池租赁 BaaS</td></tr>
+        <tr><td>尺寸·轴距</td><td>5365×2029×1870 · 3250</td></tr>
+        <tr><td>价格</td><td><b>¥52.8–65.8 万 (预售) · BaaS 42–55 万 · 5 月底上市</b></td></tr>
+        <tr><td>差异点</td><td>全球唯一量产电液集成式悬架 + 线控转向 + 后轮转向；神玑 NX9031 + SkyOS·天枢</td></tr>
+      </table>
+      <div class="car-src">📰 汽车之家</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="新势力">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">理想 L9 Livis</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">理想</span> · <span class="seg">D 级 6 座 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>EREV 第三代增程</td></tr>
+        <tr><td>三电</td><td>72.7 kWh 5C 三元锂 / 纯电 420km / 综合 1500km / 6.3L 亏电</td></tr>
+        <tr><td>尺寸·轴距</td><td>5255×2000×1810 · 3125</td></tr>
+        <tr><td>价格</td><td><b>¥55.98 万 · D2 确认 5/15 上市</b></td></tr>
+        <tr><td>差异点</td><td>800V 全主动悬架 + 全线控底盘 (线控转向+四轮转向+EMB)；2× 马赫 100 5nm = 2560 TOPS；4 颗激光雷达</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐 / 汽车之家</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="新势力">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">零跑 D19</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">零跑</span> · <span class="seg">D 级全尺寸 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 1000V + EREV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥21.98–26.98 万 (4/16 上市)</b></td></tr>
+        <tr><td>差异点</td><td>把 50 万级 D 级 SUV 价格腰斩；6/7 座 + 增程/纯电</td></tr>
+      </table>
+      <div class="car-src">📰 36氪</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="新势力">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">零跑 Lafa5 Ultra</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">零跑</span> · <span class="seg">A 级运动轿跑</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 后驱 180kW</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥11.88–12.48 万 (D1 限时上市)</b></td></tr>
+        <tr><td>差异点</td><td>Lafa5 高性能版；零跑价格屠夫策略</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1" data-region="cn" data-cat="新势力">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">乐道 L90 (2026 款)</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">乐道 (蔚来)</span> · <span class="seg">C 级大六座 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥26.58–29.98 万 · 5/9 交付</b></td></tr>
+        <tr><td>差异点</td><td>李斌：不迭代就让人感觉落后；首次车展上市</td></tr>
+      </table>
+      <div class="car-src">📰 易车</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="中国传统">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">岚图 泰山 X8</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">岚图</span> · <span class="seg">C 级大五座 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>PHEV / BEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥30.29 万起 (预售)</b></td></tr>
+        <tr><td>差异点</td><td>星光银配色；一键成床；6.1㎡ 大空间；二排零重力 + 机械按摩</td></tr>
+      </table>
+      <div class="car-src">📰 易车 / 微博</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="中国传统">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">昊铂 S600</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">昊铂 (广汽)</span> · <span class="seg">新豪华智慧运动 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>盲订开启</b></td></tr>
+        <tr><td>差异点</td><td>800V 超充 + Momenta 智驾 + 双腔空悬</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="中国传统">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">别克至境 E7</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">别克 (上汽通用)</span> · <span class="seg">合资中型 PHEV/BEV 轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>PHEV / BEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥15.49–19.49 万 (车展前夕上市置换价)</b></td></tr>
+        <tr><td>差异点</td><td>上汽通用至境子品牌首款；交付已开启</td></tr>
+      </table>
+      <div class="car-src">📰 易车</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="中国传统">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">焕新 极氪 009</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">极氪</span> · <span class="seg">D 级豪华 MPV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 900V</td></tr>
+        <tr><td>三电</td><td>Thor-U 700 TOPS</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>5 月上市 (意向金 5000 抵 10000)</b></td></tr>
+        <tr><td>差异点</td><td>Naim 6 万音响 0 元选；千里浩瀚 H7 G-ASD</td></tr>
+      </table>
+      <div class="car-src">📰 汽车之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="中国传统">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">极氪 8X</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">极氪</span> · <span class="seg">C 级 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 900V 浩瀚-S 三电机</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥35.68–50.08 万 · 限时权益 32.98–47.38 万 (4/17 上市)</b></td></tr>
+        <tr><td>差异点</td><td>G-ASD 4.0 首发；曜影车型 Brembo 6 活塞</td></tr>
+      </table>
+      <div class="car-src">📰 汽车之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="长城">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">长城 H10</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">长城 (跨哈弗)</span> · <span class="seg">大型方盒子 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>Hi4 PHEV (1.5T 123kW / 2.0T 175kW) + 800V</td></tr>
+        <tr><td>三电</td><td>42.8 kWh LFP / 纯电 180/176 km</td></tr>
+        <tr><td>尺寸·轴距</td><td>5138/5299×2050×1970 · 3000</td></tr>
+        <tr><td>价格</td><td><b>预期 22–26 万 (未公布)</b></td></tr>
+        <tr><td>差异点</td><td>长城归元平台首款方盒子；蟹行模式；5/6 座；瞭望塔式激光雷达；家用为主越野为辅</td></tr>
+      </table>
+      <div class="car-src">📰 汽车之家 / IT之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="长城">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">魏牌 V9X</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">魏牌</span> · <span class="seg">AI 豪华 6 座旗舰 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>超级 Hi4 (2.0T+双电机+4 挡 DHT+800V+6C)</td></tr>
+        <tr><td>三电</td><td>53.6/77.7 kWh / CLTC 综合 1700km / 4 秒级零百 / WLTC 470km 纯电</td></tr>
+        <tr><td>尺寸·轴距</td><td>5205/5299×2025×1825 · 3050/3150</td></tr>
+        <tr><td>价格</td><td><b>¥37.18–41.18 万 (4/17 预售) · 🇪🇺 出海欧亚&中东</b></td></tr>
+        <tr><td>差异点</td><td>归元 S 平台首款；27 个传感器+Thor-U 700 TOPS+VLA 双大模型；±20° 双向后轮转向；双腔空悬+EDC</td></tr>
+      </table>
+      <div class="car-src">📰 TechWeb / 易车 / 太平洋</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="长城">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">坦克 700 Hi4 (新款)</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">坦克</span> · <span class="seg">硬派越野 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>Hi4 双旗舰</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥42.8 万起 (D1 上市)</b></td></tr>
+        <tr><td>差异点</td><td>中式麒麟美学；首次将非承载车身与 VLA 大模型结合</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="长城">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">哈弗 猛龙 PLUS / 七座版</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">哈弗</span> · <span class="seg">硬核家用 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>Hi4 PHEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥18.98 万起 / 19.38 万起 (预售)</b></td></tr>
+        <tr><td>差异点</td><td>电控机械差速锁；多人口家庭定位</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="长城">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">长城炮 Hi4-T 皮卡</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">长城炮</span> · <span class="seg">硬派皮卡</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>米勒 2.0T+9HAT 综合 310kW/750Nm</td></tr>
+        <tr><td>三电</td><td>33.1 kWh / NEDC 1081km / WLTC 947km</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥14.98 万起 (预售)</b></td></tr>
+        <tr><td>差异点</td><td>硬连接非解耦架构；电池离地 700mm；IP68</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="长城">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">全新 高山 (魏牌焕新)</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">魏牌</span> · <span class="seg">高端 MPV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>高山 MPV 焕新版；连续 7 月国内 MPV 销量榜首</td></tr>
+      </table>
+      <div class="car-src">📰 新浪</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="红旗">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">全新一代 红旗 H9</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">红旗</span> · <span class="seg">C+ 级豪华旗舰轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>PHEV (2.0T 180kW + 双电机) / BEV</td></tr>
+        <tr><td>三电</td><td>PHEV 纯电 220km / 综合 >1300km；BEV 综合 700km</td></tr>
+        <tr><td>尺寸·轴距</td><td>5137×1904×1493 · 3060</td></tr>
+        <tr><td>价格</td><td><b>¥33.98–50.98 万 (D1 预售落地)</b></td></tr>
+        <tr><td>差异点</td><td>激光雷达+高阶智驾；FMEs 平台；对标 5 系/E 级</td></tr>
+      </table>
+      <div class="car-src">📰 网易</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="红旗">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">全新 红旗 H7</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">红旗</span> · <span class="seg">C 级豪华 PHEV 轿跑</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>1.5T PHEV (110kW)</td></tr>
+        <tr><td>三电</td><td>磷酸铁锂</td></tr>
+        <tr><td>尺寸·轴距</td><td>5060×1910×1480 · 2970</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>溜背 PHEV 轿跑；红旗品牌电气化复活</td></tr>
+      </table>
+      <div class="car-src">📰 凤凰网</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="红旗">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">红旗 越野量产版</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">红旗</span> · <span class="seg">硬派豪华越野 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>2.0T 增程 + 4 电机</td></tr>
+        <tr><td>三电</td><td>综合 620kW/1320Nm / 纯电 280km / 综合 1350km / 0-100 4.5s</td></tr>
+        <tr><td>尺寸·轴距</td><td>5135×2050×1950 · 2900</td></tr>
+        <tr><td>价格</td><td><b>下半年上市</b></td></tr>
+        <tr><td>差异点</td><td>非承载式车身 + 空悬 + 前后桥机械差速锁；首次涉足硬派 SUV</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="红旗">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">红旗金葵花 国耀 (2026 款)</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">红旗金葵花</span> · <span class="seg">豪华行政车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>4.0T V8 双涡轮 400kW/725Nm + 8AT</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥156–166 万 (上市)</b></td></tr>
+        <tr><td>差异点</td><td>零百 6.1s</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="红旗">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">红旗金葵花 国宾&quot;丹霞&quot;主题定制版</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">红旗金葵花</span> · <span class="seg">超豪华定制</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>4.0T V8 全铝 280kW/530Nm</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥718 万</b></td></tr>
+        <tr><td>差异点</td><td>漆画门饰板 + 丹霞地貌灵感</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="长安">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">阿维塔 06T</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">阿维塔</span> · <span class="seg">C 级旅行车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>3 电机 712kW / 0-100 2.78s</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>4940×1960×1455 · 2940</td></tr>
+        <tr><td>价格</td><td><b>¥21.99–27.99 万 (限时 21.59 万)</b></td></tr>
+        <tr><td>差异点</td><td>896 线激光；首批 ADS 5；4/8 预售</td></tr>
+      </table>
+      <div class="car-src">📰 前序简报</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="长安">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">新阿维塔 12</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">阿维塔</span> · <span class="seg">中大型轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥29.39–43.39 万</b></td></tr>
+        <tr><td>差异点</td><td>4/8 上市</td></tr>
+      </table>
+      <div class="car-src">📰 前序简报</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="长安">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">猛士 M817 Ultimate</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">猛士 (东风)</span> · <span class="seg">硬派智能越野</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>PHEV 极猛 2.0</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定 (基础版 31.99–36.99 万)</b></td></tr>
+        <tr><td>差异点</td><td>首发华为乾崑智驾 NCA 越野版；首搭 896 线激光雷达；磐石底盘 2.0 + 6C 快充；2026 环塔拉力赛</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家 / 爱范儿 / 网通社</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="长安">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">长安启源 Q05 激光极智版</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">长安启源</span> · <span class="seg">紧凑型轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥10.49/11.49 万 (天猫限时 8.99/9.99 万)</b></td></tr>
+        <tr><td>差异点</td><td>10 万内首搭激光雷达；地平线征程 6M 128 TOPS</td></tr>
+      </table>
+      <div class="car-src">📰 快科技</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="长安">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">第四代 逸动 蓝鲸超擎</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">长安</span> · <span class="seg">紧凑级 PHEV 轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>1.5L PHEV / 2.98L 城市百公里油耗</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥7.99 万起 (抢订)</b></td></tr>
+        <tr><td>差异点</td><td>超低油耗 + 价格屠夫</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="吉利">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">领克 10 / 10+</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">领克</span> · <span class="seg">C 级纯电运动轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 900V</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥20.99/22.59/25.99 万起 (D1 预售)</b></td></tr>
+        <tr><td>差异点</td><td>10+ 双电机 680kW/925hp；可选可调碳纤大尾翼</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="吉利">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">吉利银河 战舰 700</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">吉利银河</span> · <span class="seg">AI 全地形硬核 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>PHEV (1.5T+三电机) 路特斯同源 848hp</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>4893×2028×1975 · 2930</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>一体式大梁 + AI 智能四驱 + GVMC 动态控制；800mm 涉水；卫星通信；千里浩瀚 H7</td></tr>
+      </table>
+      <div class="car-src">📰 新浪 / IT之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="吉利">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">吉利银河星耀 7</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">吉利银河</span> · <span class="seg">中型 PHEV 轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>1.5L PHEV / 5.4s 零百 / 2L 油耗</td></tr>
+        <tr><td>三电</td><td>CLTC 纯电 230km</td></tr>
+        <tr><td>尺寸·轴距</td><td>4958×—×— · 2852</td></tr>
+        <tr><td>价格</td><td><b>¥11.28–14.28 万 (4/16 预售)</b></td></tr>
+        <tr><td>差异点</td><td>千里浩瀚 H3；e-AWD；电混四驱</td></tr>
+      </table>
+      <div class="car-src">📰 微博 / 易车</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="吉利">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">吉利银河 M9 (黑金智曜版)</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">吉利银河</span> · <span class="seg">大六座 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>5205×—×— · 3030</td></tr>
+        <tr><td>价格</td><td><b>¥26.98 万 / 限时 25.98 万</b></td></tr>
+        <tr><td>差异点</td><td>玄夜鎏金；千里浩瀚 H7+车顶激光雷达；AI BOX 70 亿参数大模型；30" 双联屏</td></tr>
+      </table>
+      <div class="car-src">📰 新浪</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="奇瑞">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">奇瑞捷途纵横 G700/G900/F700</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">捷途纵横</span> · <span class="seg">豪华电混越野</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>EREV / PHEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>奇瑞高端电混越野序列首次独立参展 (3 款同台)</td></tr>
+      </table>
+      <div class="car-src">📰 汽车之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="奇瑞">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">奇瑞 威麟 R08 PRO</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">威麟 (奇瑞)</span> · <span class="seg">皮卡</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥14.48 / 16.98 万 (官方指导价)</b></td></tr>
+        <tr><td>差异点</td><td>尊享/越野双版本</td></tr>
+      </table>
+      <div class="car-src">📰 新浪财经</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="奇瑞">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">星途 EX7</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">星途</span> · <span class="seg">中型 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV / EREV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥19.49–25.89 万 (抢先置换价)</b></td></tr>
+        <tr><td>差异点</td><td>猎鹰 700 智驾；EMB 线控制动</td></tr>
+      </table>
+      <div class="car-src">📰 新浪</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="奇瑞">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">捷途 纵横 (品牌)</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">捷途</span> · <span class="seg">奇瑞高端电混越野</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>—</b></td></tr>
+        <tr><td>差异点</td><td>品牌首次独立参展</td></tr>
+      </table>
+      <div class="car-src">📰 每经</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="北汽">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">极狐 S3</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">北汽极狐</span> · <span class="seg">B 级纯电中型轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV (159kW换电 / 150kW纯电) + 192 线激光雷达</td></tr>
+        <tr><td>三电</td><td>460/560/660 km 纯电 / 535 km 换电 / 99 秒巧克力换电</td></tr>
+        <tr><td>尺寸·轴距</td><td>4916×1900×1480 · 2876</td></tr>
+        <tr><td>价格</td><td><b>¥6.48–12.58 万 (换电版 + 电池租赁)</b></td></tr>
+        <tr><td>差异点</td><td>10 万级首搭 192 线激光雷达；元境智驾 + 全国 98% 城区 NOA；CATL 巧克力换电覆盖 99 城；得房率 91.2%</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家 / 凤凰网</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="北汽">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">问道 V9 (北汽享界)</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">享界 (北汽+华为)</span> · <span class="seg">中大型增程 MPV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>1.5T 雪鸮智能静音增程</td></tr>
+        <tr><td>三电</td><td>CATL 骁遥 LFP / 纯电 300km / 3C 电池闪充</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>4/28 开预售</b></td></tr>
+        <tr><td>差异点</td><td>北极星架构</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="上汽">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">荣威家越 07 概念车</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">荣威</span> · <span class="seg">概念车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>概念展示</b></td></tr>
+        <tr><td>差异点</td><td>荣威 + 火山引擎 AI"家越"序列；3 款概念车同台</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="上汽">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">智己 LS8</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">智己</span> · <span class="seg">中大型增程 SUV (跨时代旗舰)</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>恒星超级增程 (4.0T V8 概念) + 800V 超快充</td></tr>
+        <tr><td>三电</td><td>430 km 纯电 / 综合 1605km / 5.9L 亏电 / 12 min 30%-80%</td></tr>
+        <tr><td>尺寸·轴距</td><td>5085×2000×1807 · 3060</td></tr>
+        <tr><td>价格</td><td><b>¥24.98–29.98 万 (4/16 上市权益价)</b></td></tr>
+        <tr><td>差异点</td><td>全线控四轮转向 (双向 24°转弯半径 4.85m)；520 线激光"凝视"等效 1040线；NVIDIA Thor + 64GB DDR5X；千问大模型；上市 5 天交付破千</td></tr>
+      </table>
+      <div class="car-src">📰 汽车之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="上汽">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">2026 款 名爵 MG4</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">MG (上汽)</span> · <span class="seg">紧凑型纯电</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>4/24 上市</b></td></tr>
+        <tr><td>差异点</td><td>欧洲市场也将销售</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="东风">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">东风风行 星海 V6</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">东风风行</span> · <span class="seg">大六座纯电 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>搭载华为乾崑 ADS 高速 NOA + 自动泊车</td></tr>
+      </table>
+      <div class="car-src">📰 每经</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="上汽通用五菱">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">五菱 星光 L</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">五菱</span> · <span class="seg">长续航大六座 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>4980×1930×1760 · 2950</td></tr>
+        <tr><td>价格</td><td><b>盲订 (限时 1000 元 · 预期 ≤15 万)</b></td></tr>
+        <tr><td>差异点</td><td>2+2+2 大六座；中间通道 19cm；得房率 90%；纯平地板</td></tr>
+      </table>
+      <div class="car-src">📰 微博官方</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="广汽">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">传祺 越 7</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">广汽传祺</span> · <span class="seg">硬派 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>Q3 上市</b></td></tr>
+        <tr><td>差异点</td><td>传祺品牌全新硬派 SUV</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="广汽">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">全新 传祺 向往 E8 PHEV</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">传祺</span> · <span class="seg">中大型 PHEV MPV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>星源插混技术 / 3.98L 亏电油耗</td></tr>
+        <tr><td>三电</td><td>综合续航 1537km</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>20 万级 (开启预订)</b></td></tr>
+        <tr><td>差异点</td><td>巩固 MPV 市场优势</td></tr>
+      </table>
+      <div class="car-src">📰 网通社</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="概念车">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">天翎科 L600 Pioneer 飞行汽车</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">天翎科</span> · <span class="seg">飞行汽车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>混动增程全倾转涵道翼</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>概念展示</b></td></tr>
+        <tr><td>差异点</td><td>全球首创混动增程全倾转涵道翼构型</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="概念车">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">江汽 CV 质检大模型</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">江淮汽车</span> · <span class="seg">工业 AI 模型</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>—</b></td></tr>
+        <tr><td>差异点</td><td>行业首个汽车制造 CV 质检大模型</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1*" data-region="cn" data-cat="概念车">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">212 越野 T01/T10/SUV/探境者 01</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">212</span> · <span class="seg">硬派越野</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>—</b></td></tr>
+        <tr><td>差异点</td><td>212 品牌全新技术平台 + 4 款新车同台</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D2" data-region="cn" data-cat="长城欧拉">
+      <div class="car-head">
+        <span class="day-badge day-d2">D2</span>
+        <span class="car-name">长城欧拉 5 混动版 / 燃油版</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">欧拉 (长城)</span> · <span class="seg">紧凑型 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>混动 / 燃油</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>**¥8.98 / 7.98 万起 (D2 4/25 上市)** · 限时换新价 7.98 / 6.98 万起</b></td></tr>
+        <tr><td>差异点</td><td>⭐ <b>D2 4/25 当日上市</b>；欧拉求实主题发布会；混动+燃油双动力；含换新礼+金融礼+智联礼+质保礼四重权益</td></tr>
+      </table>
+      <div class="car-src">📰 新浪汽车</div>
+    </div><div class="car-card" data-day="D2" data-region="cn" data-cat="上汽通用别克">
+      <div class="car-head">
+        <span class="day-badge day-d2">D2</span>
+        <span class="car-name">宋 Pro DM-i 飞驰版</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">比亚迪</span> · <span class="seg">紧凑型 PHEV SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>DM-i</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥9.99 万 (D2 上市补贴后)</b></td></tr>
+        <tr><td>差异点</td><td>⭐ <b>D2 4/25 当日上市</b></td></tr>
+      </table>
+      <div class="car-src">📰 易车</div>
+    </div><div class="car-card" data-day="D2" data-region="cn" data-cat="Day 2 新闻">
+      <div class="car-head">
+        <span class="day-badge day-d2">D2</span>
+        <span class="car-name">宁德时代 6 分钟续航 1500 km 演示</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">CATL</span> · <span class="seg">电池技术</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>—</b></td></tr>
+        <tr><td>差异点</td><td>⭐ <b>D2 4/25 宁王终结加油时代演示</b>: 6 分钟充至满电 + 续航 1500km</td></tr>
+      </table>
+      <div class="car-src">📰 新浪科技</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== 德系豪华 ============== -->
+<section id="germany-cars">
+  <h2><span class="sec-no">SECTION 03</span>🇩🇪 德系豪华 · BMW / 奔驰 / 保时捷 / Smart / 沃尔沃</h2>
+  <div class="sec-sub">14 款车型 · 全部本土化研发 + 中国供应链深度绑定</div>
+
+  <div class="cars-grid">
+    <div class="car-card" data-day="D1" data-region="germany" data-cat="宝马">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">新世代 iX3 长轴距版</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">BMW</span> · <span class="seg">C 级纯电 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 800V</td></tr>
+        <tr><td>三电</td><td>CLTC >900 km / 充电 10min 427km</td></tr>
+        <tr><td>尺寸·轴距</td><td>4885×1895×1635 · 3005</td></tr>
+        <tr><td>价格</td><td><b>下半年上市</b></td></tr>
+        <tr><td>差异点</td><td>Neue Klasse 首款量产；全景 iDrive；Momenta+阿里 LLM；前异步+后励磁同步双电机</td></tr>
+      </table>
+      <div class="car-src">📰 易车</div>
+    </div><div class="car-card" data-day="D1" data-region="germany" data-cat="宝马">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">新世代 i3 长轴距版</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">BMW</span> · <span class="seg">C 级纯电运动轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 800V 双电机 345kW</td></tr>
+        <tr><td>三电</td><td>WLTP 900 km / 400 kW 快充</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>下半年上市</b></td></tr>
+        <tr><td>差异点</td><td>驾控超级大脑；中国特供加长版；天使大灯+格栅融合</td></tr>
+      </table>
+      <div class="car-src">📰 易车</div>
+    </div><div class="car-card" data-day="D1" data-region="germany" data-cat="宝马">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">BMW M3 40 周年限量版</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">BMW</span> · <span class="seg">高性能轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>中国限量 40 台 (下半年上市)</b></td></tr>
+        <tr><td>差异点</td><td>M3 40 周年纪念版；中国专属</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家</div>
+    </div><div class="car-card" data-day="D1" data-region="germany" data-cat="奔驰">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">全新纯电 GLC 长轴距 SUV</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">奔驰</span> · <span class="seg">C 级豪华纯电 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV MB.EA 800V + SiC 逆变器 / 双电机 (前 163kW + 后 300kW)</td></tr>
+        <tr><td>三电</td><td>89kWh / CLTC 680/703km / 320kW 快充 / 22min 10-80%</td></tr>
+        <tr><td>尺寸·轴距</td><td>—×—×— · 3027</td></tr>
+        <tr><td>价格</td><td><b>待定</b></td></tr>
+        <tr><td>差异点</td><td>3027mm 长轴距 6 座；39.1" MBUX 超联屏；S 级同源 AIRMATIC 空悬；后轮主动转向 ±4.5°；融合字节强化学习大模型；230 次实车碰撞测试</td></tr>
+      </table>
+      <div class="car-src">📰 汽车之家 / 每经</div>
+    </div><div class="car-card" data-day="D1" data-region="germany" data-cat="奔驰">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">新一代 S 级 (中期改款)</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">奔驰</span> · <span class="seg">D 级豪华轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>中国首秀</b></td></tr>
+        <tr><td>差异点</td><td>端侧多模态 VLM；与清华+智谱合作</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1" data-region="germany" data-cat="奔驰">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">新一代迈巴赫 S 级</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">迈巴赫</span> · <span class="seg">超豪华</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>展出</b></td></tr>
+        <tr><td>差异点</td><td>S 级中期改款迈巴赫版本同步</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1" data-region="germany" data-cat="奔驰">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">纯电 CLA 260 L</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">奔驰</span> · <span class="seg">B 级纯电豪华轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 单电机 165kW</td></tr>
+        <tr><td>三电</td><td>60 kWh LFP / CLTC 600 km / 200 km/h</td></tr>
+        <tr><td>尺寸·轴距</td><td>4763×1836×1471 · 2830</td></tr>
+        <tr><td>价格</td><td><b>¥22.9 万 (D1 4/24 全国统一价上市)</b></td></tr>
+        <tr><td>差异点</td><td>⭐ CLA 纯电入门版；最新三叉星辉光源；4/24 当日上市；切入合资纯电 22-25 万段</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="germany" data-cat="奔驰">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">奔驰 EQS / EQE / EQB</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">奔驰</span> · <span class="seg">纯电</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>静态</b></td></tr>
+        <tr><td>差异点</td><td>40 款奔驰展车 (含 12 款经典)；140 周年纪念</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1" data-region="germany" data-cat="保时捷">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">纯电 Cayenne / Cayenne Turbo Electric</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">保时捷</span> · <span class="seg">豪华 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV 800V</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>车展首发</b></td></tr>
+        <tr><td>差异点</td><td>保时捷 SUV 电气化；918 跨代衍生纽北</td></tr>
+      </table>
+      <div class="car-src">📰 保时捷官方</div>
+    </div><div class="car-card" data-day="D1" data-region="germany" data-cat="保时捷">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">919 Hybrid Evo</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">保时捷</span> · <span class="seg">纽北王者</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>Hybrid</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>展出</b></td></tr>
+        <tr><td>差异点</td><td>保时捷"保藏车库"主题</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家</div>
+    </div><div class="car-card" data-day="D1" data-region="germany" data-cat="Smart">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">Smart 精灵 #6 EHD</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">smart</span> · <span class="seg">中型 PHEV 轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>1.5T PHEV</td></tr>
+        <tr><td>三电</td><td>CLTC 纯电 285km / 综合 1810km</td></tr>
+        <tr><td>尺寸·轴距</td><td>4906×1922×1508 · 2926</td></tr>
+        <tr><td>价格</td><td><b>预售开启</b></td></tr>
+        <tr><td>差异点</td><td>奔驰全球设计团队操刀；博世+ZF 闭环转向+FSD 可变阻尼；smart #2 概念车同台</td></tr>
+      </table>
+      <div class="car-src">📰 易车</div>
+    </div><div class="car-card" data-day="D1*" data-region="germany" data-cat="沃尔沃">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">沃尔沃 EX90</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">沃尔沃</span> · <span class="seg">C 级纯电旗舰 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV SPA2 / 双电机 800V</td></tr>
+        <tr><td>三电</td><td>CLTC 756km / 0-100 4.2s / 22min 10-80%</td></tr>
+        <tr><td>尺寸·轴距</td><td>5037×1964×1742 · 2985</td></tr>
+        <tr><td>价格</td><td><b>¥53.99–60.99 万 (4/15 预售)</b></td></tr>
+        <tr><td>差异点</td><td>SPA2 平台；DUS 驾驶员感知系统；硼钢电池防护；双腔空悬</td></tr>
+      </table>
+      <div class="car-src">📰 易车</div>
+    </div><div class="car-card" data-day="D1*" data-region="germany" data-cat="沃尔沃">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">沃尔沃 ES90</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">沃尔沃</span> · <span class="seg">D 级纯电旗舰轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV SPA2 800V</td></tr>
+        <tr><td>三电</td><td>续航 848km / 0-100 3.9s / 350kW 快充</td></tr>
+        <tr><td>尺寸·轴距</td><td>5000×1942×1547 · 3102</td></tr>
+        <tr><td>价格</td><td><b>¥42.99–49.99 万 (4/15 预售)</b></td></tr>
+        <tr><td>差异点</td><td>激光雷达版双 NVIDIA Orin 508 TOPS；4C 自适应底盘；风阻 0.25Cd</td></tr>
+      </table>
+      <div class="car-src">📰 易车</div>
+    </div><div class="car-card" data-day="D1*" data-region="germany" data-cat="沃尔沃">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">沃尔沃 XC70 99 周年感恩版</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">沃尔沃</span> · <span class="seg">中型 PHEV SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>PHEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>¥24.99–26.99 万 (限量上市)</b></td></tr>
+        <tr><td>差异点</td><td>99 周年纪念限量</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== 全球品牌 ============== -->
+<section id="global-cars">
+  <h2><span class="sec-no">SECTION 04</span>🌐 全球品牌 · 日韩 / 美 / 法</h2>
+  <div class="sec-sub">13 款车型 · 现代艾尼氪入华 + 日产 NX8 + 雷克萨斯 ES + 长安马自达 + 凯迪拉克 + 标致雪铁龙回归 + 莲花</div>
+
+  <div class="cars-grid">
+    <div class="car-card" data-day="D1" data-region="global" data-cat="日产">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">东风日产 NX8</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">东风日产</span> · <span class="seg">中型新能源 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV / EREV 双版本 800V SiC</td></tr>
+        <tr><td>三电</td><td>CATL LFP / 5C 超充；增程 1.5T+电机 304kW；纯电 215/250kW</td></tr>
+        <tr><td>尺寸·轴距</td><td>4870×1920×1680 · 2917</td></tr>
+        <tr><td>价格</td><td><b>¥14.99–19.99 万 (限时权益 / 官方指导价 15.99-18.49 万)</b></td></tr>
+        <tr><td>差异点</td><td>⭐ N 序列首款 SUV；2000MPa A 柱；高强钢 ≥70%；CATL 云盾 2.0 寿命 60 万 km；高通 8295P + Momenta 智驾 + 激光雷达 (Max 版)；Nico AI 助手</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家 / 凤凰网 / 汽车之家</div>
+    </div><div class="car-card" data-day="D1" data-region="global" data-cat="日产">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">日产都市插混 SUV 概念车</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">日产</span> · <span class="seg">概念车 (城市)</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>PHEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>概念车</b></td></tr>
+        <tr><td>差异点</td><td>整合全球资源 / 战略级前瞻；车顶激光雷达预留；量产版 1 年内推出</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家</div>
+    </div><div class="car-card" data-day="D1" data-region="global" data-cat="日产">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">日产 Terrano 插混概念车</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">日产</span> · <span class="seg">概念车 (越野)</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>PHEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>概念车</b></td></tr>
+        <tr><td>差异点</td><td>V-motion 设计 + 硬派机甲美学；量产版 1 年内推出</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="global" data-cat="日产">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">日产 Formula E Gen3 EVO 赛车</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">日产</span> · <span class="seg">Formula E 赛车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>展车</b></td></tr>
+        <tr><td>差异点</td><td>第十二赛季中国站合作伙伴：东风日产</td></tr>
+      </table>
+      <div class="car-src">📰 新浪科技</div>
+    </div><div class="car-card" data-day="D1" data-region="global" data-cat="现代">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">IONIQ V (艾尼氪 金星)</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">北京现代艾尼氪</span> · <span class="seg">中型纯电轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV (E-GMP 平台)</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>4900×1890×1470 · 2900；风阻 0.24</td></tr>
+        <tr><td>价格</td><td><b>待定 (年内上市)</b></td></tr>
+        <tr><td>差异点</td><td>⭐ 艾尼氪入华首款量产车；中国设计中心主导；27" 4K 骁龙 8295 + 文心一言+豆包；Momenta L2+；🇪🇺 现代 CEO 穆安东宣布"重仓中国，绝不退出"，未来计划出口中东和英国</td></tr>
+      </table>
+      <div class="car-src">📰 新浪 / IT之家 / 经济观察报</div>
+    </div><div class="car-card" data-day="D1" data-region="global" data-cat="现代">
+      <div class="car-head">
+        <span class="day-badge day-d1">D1</span>
+        <span class="car-name">VENUS / EARTH 概念车</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">艾尼氪</span> · <span class="seg">概念车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>BEV (E-GMP)</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>概念车</b></td></tr>
+        <tr><td>差异点</td><td>与 IONIQ V 同步全球首发；行星命名 ("IONIQ Universe" 战略)</td></tr>
+      </table>
+      <div class="car-src">📰 新浪 / 量子位 / 央视</div>
+    </div><div class="car-card" data-day="D1*" data-region="global" data-cat="长安马自达">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">长安马自达 EZ-60 马年版</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">长安马自达</span> · <span class="seg">中型 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>增程 1.5T+电机 / BEV</td></tr>
+        <tr><td>三电</td><td>纯电 600km</td></tr>
+        <tr><td>尺寸·轴距</td><td>4850×1935×1620 · 2902</td></tr>
+        <tr><td>价格</td><td><b>¥13.99 / 14.59 万 (D1 上市)</b></td></tr>
+        <tr><td>差异点</td><td>9 风道空气动力学；高速下压力 705N；4nm 车规级芯片；100" 裸眼 3D HUD；连续 6 个月合资新能源中型 SUV 销冠；🇪🇺 海外 CX-6e 夏季登陆欧洲</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐 / 汽车之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="global" data-cat="雷克萨斯">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">全新一代 雷克萨斯 ES</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">雷克萨斯</span> · <span class="seg">中大型豪华行政级轿车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>2.0L 混动 (综合 145kW) / E-CVT，纯电后续推出</td></tr>
+        <tr><td>三电</td><td>4.39L/100km</td></tr>
+        <tr><td>尺寸·轴距</td><td>5140×1920×1555 · 2950</td></tr>
+        <tr><td>价格</td><td><b>¥29.99 万 (D1 上市，混动版)</b></td></tr>
+        <tr><td>差异点</td><td>⭐ <b>D1 雷克萨斯ES 直接将门槛拉到 30 万以内</b> (上代入门 ES 300h 37.89 万)；LF-ZC 设计语言；首次取消大量物理按键；竹韵香氛；混动+纯电双路线</td></tr>
+      </table>
+      <div class="car-src">📰 汽车之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="global" data-cat="本田">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">本田 烨 P7 / 雅阁三代同堂 / F1 座舱</span>
+        
+      </div>
+      <div class="car-meta">
+        <span class="brand">本田</span> · <span class="seg">展示</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>展车</b></td></tr>
+        <tr><td>差异点</td><td>本田展台核心</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐</div>
+    </div><div class="car-card" data-day="D1*" data-region="global" data-cat="凯迪拉克">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">凯威德</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">凯迪拉克</span> · <span class="seg">大型 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>5222×2026×1799 · 3094</td></tr>
+        <tr><td>价格</td><td><b>¥46.88 / 50.88 万 (已上市)</b></td></tr>
+        <tr><td>差异点</td><td>ARS 后轮转向；22" 轮圈；Brembo 6 活塞</td></tr>
+      </table>
+      <div class="car-src">📰 汽车之家</div>
+    </div><div class="car-card" data-day="D1*" data-region="global" data-cat="标致">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">Concept 6 狮锐 + Concept 8 琉明 + Polygon</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">东风标致</span> · <span class="seg">概念车</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>概念车</b></td></tr>
+        <tr><td>差异点</td><td>⭐ 时隔 3 年回归 A 级车展；2027 起推全新智电 SUV+轿车；Polygon 搭载 Hypersquare 线控转向 + 第三代 i-Cockpit</td></tr>
+      </table>
+      <div class="car-src">📰 搜狐 / 新浪财经</div>
+    </div><div class="car-card" data-day="D1*" data-region="global" data-cat="雪铁龙">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">ELO 概念车 + 9X8 Hypercar + 凡尔赛 C5X</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">东风雪铁龙</span> · <span class="seg">概念车 + 已售产品</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>—</td></tr>
+        <tr><td>三电</td><td>—</td></tr>
+        <tr><td>尺寸·轴距</td><td>—</td></tr>
+        <tr><td>价格</td><td><b>概念车 + 已售</b></td></tr>
+        <tr><td>差异点</td><td>时隔 3 年重返 A 级车展；FE 电动方程式赛车同台；启动"龙友共创计划"</td></tr>
+      </table>
+      <div class="car-src">📰 易车</div>
+    </div><div class="car-card" data-day="D1*" data-region="global" data-cat="莲花">
+      <div class="car-head">
+        <span class="day-badge day-d1-missed">D1<sup style="color:#d97706">★</sup></span>
+        <span class="car-name">莲花 For Me 黑金限量版</span>
+        <span class="eu-tag">🇪🇺 EU</span>
+      </div>
+      <div class="car-meta">
+        <span class="brand">莲花</span> · <span class="seg">超混 SUV</span>
+      </div>
+      <table class="car-spec">
+        <tr><td>动力</td><td>952PS / 0-100 3.3s</td></tr>
+        <tr><td>三电</td><td>CLTC 纯电 420km / 综合 1416km</td></tr>
+        <tr><td>尺寸·轴距</td><td>5103×2019×1636</td></tr>
+        <tr><td>价格</td><td><b>¥63.8 万 (限量 78 台 · D1 上市)</b></td></tr>
+        <tr><td>差异点</td><td>黑金专属涂装 (纯手工)；碳纤维车标</td></tr>
+      </table>
+      <div class="car-src">📰 IT之家</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== 技术发布 ============== -->
+<section id="tech">
+  <h2><span class="sec-no">SECTION 05</span>🔧 新增技术 / 平台发布 (D1+D2)</h2>
+  <div class="sec-sub">平台 / 智驾 / 智舱 / 三电 / 底盘 · 31 项 · D2 新增地平线舱驾融合芯片 + CATL 6 分钟满电演示</div>
+
+  <table class="report-tbl">
+    <thead>
+      <tr>
+        <th style="width:55px">DAY</th>
+        <th style="width:65px">分类</th>
+        <th style="width:200px">发布方 / 技术</th>
+        <th>关键指标</th>
+        <th style="width:200px">首搭</th>
+        <th style="width:100px">量产时间</th>
+        <th style="width:300px">行业信号</th>
+        <th style="width:90px">信源</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-day="D1" data-cat="平台">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">平台</span></td>
+      <td><b>大众 + 小鹏 + 地平线 (酷睿程)</b> <span class="eu-tag-sm">🇪🇺</span><br/><span class="tech-name">CEA 电子电气架构</span></td>
+      <td>中央计算+区域控制；准中央架构；开发周期 -30%；控制单元 -30%；18 个月开发完成</td>
+      <td>与众 07 / 与众 08 / 与众 09 / ID.AURA T6 / ID.ERA 9X (5 款车型 D1+D2 同步搭载)</td>
+      <td>2027 起逐步覆盖纯电、插混、增程多平台</td>
+      <td class="signal">⭐ 大众体系性押注：合资品牌首个中国专属架构本土化落地；合资 3.0 代表事件</td>
+      <td class="src-cell">ZAKER / 凤凰网</td>
+    </tr><tr data-day="D1" data-cat="平台">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">平台</span></td>
+      <td><b>长城 (归元 S)</b> <br/><span class="tech-name">归元 S 超级 AI 汽车平台</span></td>
+      <td>5 大动力兼容 (PHEV/HEV/BEV/燃油/氢能)；硬件原子化 300+ 标准化组件；双 VLA + 三维数字底盘 + Coffee EEA 4.0</td>
+      <td>魏牌 V9X (首款)</td>
+      <td>已量产</td>
+      <td class="signal">归元 = 全栈自研 + 全动力兼容；标准化组件可跨车型复用</td>
+      <td class="src-cell">TechWeb / 太平洋</td>
+    </tr><tr data-day="D1" data-cat="平台">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">平台</span></td>
+      <td><b>大众 (EA211 Evo II 1.5T 增程器)</b> <span class="eu-tag-sm">🇪🇺</span><br/><span class="tech-name">EA211 Evo II</span></td>
+      <td>VTG 可变截面涡轮 + 深度米勒循环；热效率 41%；亏电油耗 6.27L/100km；亏电动力衰减 <5%</td>
+      <td>上汽大众 ID.ERA 9X (大众首款全尺寸增程)</td>
+      <td>已量产</td>
+      <td class="signal">德系车企首次量产米勒循环增程器；热效率 41% 行业领先</td>
+      <td class="src-cell">汽车之家</td>
+    </tr><tr data-day="D1" data-cat="智驾">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">智驾</span></td>
+      <td><b>华为乾崑</b> <br/><span class="tech-name">ADS 5 + WEWA 2.0 世界模型</span></td>
+      <td>5+1 复杂城区路口；端到端神经网络 4 倍参数</td>
+      <td>全系鸿蒙智行 + 启境 + 奕境</td>
+      <td>2026 量产中</td>
+      <td class="signal">4/23 华为乾崑技术大会发布</td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr data-day="D1" data-cat="智驾">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">智驾</span></td>
+      <td><b>华为乾崑</b> <br/><span class="tech-name">乾崑 OS + XMC 数字底盘引擎</span></td>
+      <td>时延 -30%；可靠性 +20 倍；LCoS 双焦面 AR-HUD</td>
+      <td>猛士 M817 Ultimate / 启境 GT7</td>
+      <td>4/23 全球首发</td>
+      <td class="signal">全球首个汽车专用 OS</td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr data-day="D1" data-cat="智驾">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">智驾</span></td>
+      <td><b>华为乾崑 + 猛士</b> <br/><span class="tech-name">乾崑智驾 NCA 越野版</span></td>
+      <td>896 线双光路图像级激光雷达；探测 120m；识别 14cm 障碍物；路面感知精度 95%；从城市通勤延伸到山野小路</td>
+      <td>猛士 M817 Ultimate (首搭)</td>
+      <td>已量产</td>
+      <td class="signal">⭐ 越野场景首次具备城市级 NOA 能力；新品类智驾</td>
+      <td class="src-cell">爱范儿 / IT之家</td>
+    </tr><tr data-day="D1" data-cat="智驾">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">智驾</span></td>
+      <td><b>理想 (自研)</b> <br/><span class="tech-name">马赫 100 芯片 (5nm 车规)</span></td>
+      <td>2× 协同 = 2560 TOPS；5nm 车规</td>
+      <td>理想 L9 Livis</td>
+      <td>5/15 量产</td>
+      <td class="signal">中国新势力首颗 5nm 自研车规芯片</td>
+      <td class="src-cell">搜狐</td>
+    </tr><tr data-day="D1" data-cat="智驾">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">智驾</span></td>
+      <td><b>小鹏 (自研)</b> <br/><span class="tech-name">SEPA 3.0 + 4× 图灵 + VLA 2.0</span></td>
+      <td>3000 TOPS；预埋 L4</td>
+      <td>小鹏 GX (Q2)</td>
+      <td>Q2 量产</td>
+      <td class="signal">前装量产 Robotaxi 原型；VLA 一段式端到端</td>
+      <td class="src-cell">新浪</td>
+    </tr><tr data-day="D1" data-cat="智驾">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">智驾</span></td>
+      <td><b>蔚来 (自研)</b> <br/><span class="tech-name">神玑 NX9031 + AQUILA 天鹰座超感</span></td>
+      <td>5nm；规模化商用</td>
+      <td>蔚来 ES9</td>
+      <td>5 月底量产</td>
+      <td class="signal">全球首款规模化商用 5nm 车规智驾芯片</td>
+      <td class="src-cell">汽车之家</td>
+    </tr><tr data-day="D1" data-cat="智驾">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">智驾</span></td>
+      <td><b>地平线</b> <br/><span class="tech-name">征程 6 系列 + HSD</span></td>
+      <td>征程 6 出货突破 1000 万；星空 (年内)；HSD 1.6</td>
+      <td>ID.AURA T6 (酷睿程方案) / 长安启源 Q05 (征程 6M)</td>
+      <td>已量产 + 年内星空</td>
+      <td class="signal">⭐ 中国本土智驾芯片+大众联合落地；征程6M下放10万级</td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr data-day="D1" data-cat="智驾">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">智驾</span></td>
+      <td><b>Momenta</b> <span class="eu-tag-sm">🇪🇺</span><br/><span class="tech-name">飞轮大模型 + R7 强化学习世界模型</span></td>
+      <td>端到端世界模型</td>
+      <td>全球首发: AUDI E7X / ID.ERA 9X (大众首发)；同步: iX3 LWB / 艾尼氪 V / 极狐 S3 / 日产 NX8 等</td>
+      <td>全球首发量产</td>
+      <td class="signal">⭐ 同时被 BBA + 大众 + 现代 + 北汽 + 日产 5 大集团采用；中国智驾供应商最大订单聚集点</td>
+      <td class="src-cell">节点 Auto / 易车</td>
+    </tr><tr data-day="D1" data-cat="智驾">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">智驾</span></td>
+      <td><b>智己 (Momenta 赋能)</b> <br/><span class="tech-name">IM AD ZETA</span></td>
+      <td>L3 感知 + L4 模型；520 线超视域激光"智能凝视"等效 1040 线；NVIDIA Thor + 64GB DDR5X / 273GB/s</td>
+      <td>智己 LS8 (D1 上市)</td>
+      <td>已搭载</td>
+      <td class="signal">中国 L3-L4 平权下放到 25 万级</td>
+      <td class="src-cell">汽车之家</td>
+    </tr><tr data-day="D2" data-cat="智驾">
+      <td><span class="day-badge day-d2">D2</span></td>
+      <td><span class="cat-tag">智驾</span></td>
+      <td><b>地平线</b> <br/><span class="tech-name">⭐ <b>中国首款舱驾融合芯片 + 智能体操作系统</b></span></td>
+      <td>舱驾一体；专为 AI 智能体优化；4/25 D2 发布会现场公布</td>
+      <td>待披露</td>
+      <td>年内交付</td>
+      <td class="signal">⭐ <b>D2 关键发布</b>: 中国首款舱驾融合芯片；地平线从智驾扩展到舱驾一体</td>
+      <td class="src-cell">第一电动 / 易车</td>
+    </tr><tr data-day="D1" data-cat="智舱">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">智舱</span></td>
+      <td><b>华为乾崑</b> <br/><span class="tech-name">HarmonySpace 6 + AMS + 小艺 MoLA 2.0</span></td>
+      <td>舱内 AI 多模感知；端云协同</td>
+      <td>全系鸿蒙智行 / 启境 GT7 / 奕境 X9 / 猛士 M817 Ultimate</td>
+      <td>已量产</td>
+      <td class="signal">4/23 全球首发</td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr data-day="D1" data-cat="智舱">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">智舱</span></td>
+      <td><b>奔驰 + 清华 + 智谱</b> <span class="eu-tag-sm">🇪🇺</span><br/><span class="tech-name">端侧多模态 VLM 后排娱乐</span></td>
+      <td>端侧 VLM；S 级首搭</td>
+      <td>新一代 S 级</td>
+      <td>已搭载</td>
+      <td class="signal">端侧大模型上车</td>
+      <td class="src-cell">搜狐</td>
+    </tr><tr data-day="D1" data-cat="智舱">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">智舱</span></td>
+      <td><b>宝马 + 阿里 + 高德</b> <span class="eu-tag-sm">🇪🇺</span><br/><span class="tech-name">宝马定制 LLM</span></td>
+      <td>融合 DeepSeek 能力；HiCar+鸿蒙生态</td>
+      <td>新世代 iX3 LWB / i3 LWB</td>
+      <td>下半年量产</td>
+      <td class="signal">宝马首次接入中国 LLM</td>
+      <td class="src-cell">搜狐</td>
+    </tr><tr data-day="D1" data-cat="三电">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">三电</span></td>
+      <td><b>宁德时代</b> <br/><span class="tech-name">第三代神行超充电池</span></td>
+      <td>12C 峰值 / 5C 持续；能量密度 ↑15%</td>
+      <td>全系合作伙伴</td>
+      <td>已量产</td>
+      <td class="signal">4/23 CATL 超级科技日</td>
+      <td class="src-cell">CATL 官方</td>
+    </tr><tr data-day="D1" data-cat="三电">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">三电</span></td>
+      <td><b>宁德时代</b> <br/><span class="tech-name">第三代麒麟 (CTP 3.0+)</span></td>
+      <td>CTP 3.0+；体积利用率 75%</td>
+      <td>高端豪华品牌</td>
+      <td>已量产</td>
+      <td class="signal">麒麟系列升级</td>
+      <td class="src-cell">CATL</td>
+    </tr><tr data-day="D1" data-cat="三电">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">三电</span></td>
+      <td><b>宁德时代</b> <br/><span class="tech-name">第二代骁遥超级增混电池</span></td>
+      <td>增程专属 LFP；3C 闪充</td>
+      <td>北汽问道 V9 / 极狐 S3 等</td>
+      <td>已量产</td>
+      <td class="signal">增程 = 多 LFP 趋势确立</td>
+      <td class="src-cell">CATL</td>
+    </tr><tr data-day="D1" data-cat="三电">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">三电</span></td>
+      <td><b>宁德时代</b> <br/><span class="tech-name">第二代钠新电池</span></td>
+      <td>钠电池量产化</td>
+      <td>—</td>
+      <td>已量产</td>
+      <td class="signal">钠电池规模化</td>
+      <td class="src-cell">CATL</td>
+    </tr><tr data-day="D1" data-cat="三电">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">三电</span></td>
+      <td><b>宁德时代</b> <br/><span class="tech-name">巧克力换电块 26 号</span></td>
+      <td>99 秒换电；覆盖 99 城 / 1470 站</td>
+      <td>极狐 S3</td>
+      <td>已量产 (2026 底 3000 站)</td>
+      <td class="signal">⭐ 换电网络规模化突破</td>
+      <td class="src-cell">CATL</td>
+    </tr><tr data-day="D1" data-cat="三电">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">三电</span></td>
+      <td><b>比亚迪弗迪</b> <br/><span class="tech-name">第二代刀片 + 兆瓦闪充</span></td>
+      <td>10C；5min 补能 400km；1MW 充电功率</td>
+      <td>大唐 EV (首搭) / 海豹 08 / 海狮 08 / 元 PLUS</td>
+      <td>已量产</td>
+      <td class="signal">⭐ 比亚迪兆瓦闪充落地 / 业内首个 1MW 充电</td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr data-day="D1" data-cat="三电">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">三电</span></td>
+      <td><b>华为 DriveONE</b> <br/><span class="tech-name">雪鸮智能增程系统</span></td>
+      <td>800V 增程；综合续航 1250km+</td>
+      <td>智界 V9 / 北汽问道 V9</td>
+      <td>已量产</td>
+      <td class="signal">增程器+电驱一体化</td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr data-day="D1" data-cat="三电">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">三电</span></td>
+      <td><b>CATL</b> <br/><span class="tech-name">云盾电池 2.0</span></td>
+      <td>设计寿命 60 万 km；高强钢结构防护</td>
+      <td>东风日产 NX8 / 极狐问道 V9</td>
+      <td>已量产</td>
+      <td class="signal">合资品牌首搭 CATL 长寿命方案</td>
+      <td class="src-cell">凤凰网</td>
+    </tr><tr data-day="D1" data-cat="底盘">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">底盘</span></td>
+      <td><b>博世 · 全球首发</b> <br/><span class="tech-name">新一代线控转向</span></td>
+      <td>量产定点；机械解耦</td>
+      <td>小鹏 GX (Q2)</td>
+      <td>Q2 量产</td>
+      <td class="signal">⭐ 中国首个量产线控转向定点</td>
+      <td class="src-cell">新浪</td>
+    </tr><tr data-day="D1" data-cat="底盘">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">底盘</span></td>
+      <td><b>理想</b> <br/><span class="tech-name">800V 全主动悬架 + 全线控底盘</span></td>
+      <td>线控转向+四轮转向+EMB 电控机械制动</td>
+      <td>理想 L9 Livis (5/15)</td>
+      <td>5/15 量产</td>
+      <td class="signal">全球首个 800V + 全线控量产组合</td>
+      <td class="src-cell">搜狐</td>
+    </tr><tr data-day="D1" data-cat="底盘">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">底盘</span></td>
+      <td><b>智己</b> <br/><span class="tech-name">灵蜥数字底盘 3.0</span></td>
+      <td>全线控四轮转向 (双向 24°)；前双叉臂+后多连杆+空悬+德国大陆线控制动；4.85m 转弯半径</td>
+      <td>智己 LS8 (D1 上市)</td>
+      <td>已量产</td>
+      <td class="signal">25 万级旗舰首搭全线控底盘</td>
+      <td class="src-cell">汽车之家</td>
+    </tr><tr data-day="D1" data-cat="底盘">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">底盘</span></td>
+      <td><b>比亚迪</b> <br/><span class="tech-name">云辇-A 智能空悬 + 道路预瞄 + 一体式后轮转向</span></td>
+      <td>1MΩ 高频感知；后轮转向 ±20°</td>
+      <td>大唐 EV / 海豹 08 / 海狮 08</td>
+      <td>已量产</td>
+      <td class="signal">全系下放豪华底盘</td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr data-day="D1" data-cat="底盘">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">底盘</span></td>
+      <td><b>宝马 (Neue Klasse)</b> <span class="eu-tag-sm">🇪🇺</span><br/><span class="tech-name">第六代 eDrive + 驾控超级大脑</span></td>
+      <td>前异步 + 后励磁同步双电机；4.9s 零百；98% 减速能量回收</td>
+      <td>iX3 LWB / i3 LWB</td>
+      <td>下半年量产</td>
+      <td class="signal">宝马 NK 平台核心</td>
+      <td class="src-cell">易车</td>
+    </tr><tr data-day="D1" data-cat="底盘">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">底盘</span></td>
+      <td><b>奔驰</b> <span class="eu-tag-sm">🇪🇺</span><br/><span class="tech-name">MB.EA 平台 + 800V SiC + 后轴 2 挡变速</span></td>
+      <td>800V 电气架构；后轴电动 2 挡</td>
+      <td>全新纯电 GLC LWB</td>
+      <td>已量产</td>
+      <td class="signal">奔驰首个 800V 量产平台</td>
+      <td class="src-cell">搜狐</td>
+    </tr><tr data-day="D1" data-cat="底盘">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><span class="cat-tag">底盘</span></td>
+      <td><b>采埃孚 ZF</b> <span class="eu-tag-sm">🇪🇺</span><br/><span class="tech-name">闭环转向控制 + FSD 可变阻尼</span></td>
+      <td>线控转向 + 阻尼智能</td>
+      <td>Smart 精灵 #6 EHD</td>
+      <td>已搭载</td>
+      <td class="signal">合资品牌 ZF 底盘电控落地</td>
+      <td class="src-cell">太平洋</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ============== 供应商 ============== -->
+<section id="suppliers">
+  <h2><span class="sec-no">SECTION 06</span>🏭 供应商动态</h2>
+  <div class="sec-sub">14 项 · D2 关键: 地平线舱驾融合芯片 + CATL 6min 满电 1500km · 整零同馆首次出现</div>
+
+  <table class="report-tbl">
+    <thead>
+      <tr>
+        <th style="width:55px">DAY</th>
+        <th style="width:200px">供应商</th>
+        <th>事件</th>
+        <th style="width:300px">行业信号</th>
+        <th style="width:90px">信源</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-day="D1">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><b>华为车 BU (乾崑)</b> </td>
+      <td>ADS 5 + HarmonySpace 6 + AMS + XMC + 乾崑 OS 全面发布 (4/23)</td>
+      <td class="signal">⭐ "境"系列首独立参展 (启境 GT7 + 奕境 X9 同台)；W3 馆华为生态包馆</td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr data-day="D1">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><b>宁德时代 (CATL)</b> </td>
+      <td>超级科技日发 5 款电池 + 超换一体网络 (4/23)；W4 馆与 BMW + Porsche 同馆</td>
+      <td class="signal">⭐ "整零同馆"标志；与 OEM 物理同列</td>
+      <td class="src-cell">CATL</td>
+    </tr><tr data-day="D2">
+      <td><span class="day-badge day-d2">D2</span></td>
+      <td><b>宁德时代 (CATL)</b> </td>
+      <td>⭐ <b>D2 4/25 演示: 6 分钟满电续航 1500km</b></td>
+      <td class="signal">⭐ <b>D2 关键技术演示</b>: 把"补能焦虑"问题从充电速度推到极限；倒逼 OEM 充电桩改造</td>
+      <td class="src-cell">新浪科技</td>
+    </tr><tr data-day="D2">
+      <td><span class="day-badge day-d2">D2</span></td>
+      <td><b>地平线 (Horizon)</b> </td>
+      <td>⭐ <b>D2 4/25 发布中国首款舱驾融合芯片 + 智能体操作系统</b></td>
+      <td class="signal">⭐ <b>D2 关键发布</b>: 地平线从智驾扩展到舱驾一体；中国首颗舱驾融合芯片</td>
+      <td class="src-cell">第一电动</td>
+    </tr><tr data-day="D1">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><b>地平线 (Horizon)</b> <span class="eu-tag-sm">🇪🇺</span></td>
+      <td>征程家族出货突破 1000 万；星空舱驾融合芯片年内发布；与 VW CARIAD 合资酷睿程深度落地</td>
+      <td class="signal">⭐ 中国本土芯片首次主导大众下一代电子电气架构；征程 6M 下放 10 万级 (启源 Q05)</td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr data-day="D1">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><b>Momenta</b> <span class="eu-tag-sm">🇪🇺</span></td>
+      <td>飞轮大模型 + R7 强化学习世界模型</td>
+      <td class="signal">⭐ 5 大集团同时签约: AUDI E7X / ID.ERA 9X (R7 全球首发) / iX3 LWB / 艾尼氪 V / 极狐 S3 / 日产 NX8 / 智己 LS8</td>
+      <td class="src-cell">节点 Auto</td>
+    </tr><tr data-day="D1">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><b>博世 (Bosch)</b> <span class="eu-tag-sm">🇪🇺</span></td>
+      <td>全球首发新一代线控转向量产定点于小鹏 GX</td>
+      <td class="signal">⭐ 第一个量产线控转向定点；同步落地 Smart #6 闭环转向控制</td>
+      <td class="src-cell">新浪</td>
+    </tr><tr data-day="D1">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><b>比亚迪弗迪</b> </td>
+      <td>第二代刀片电池 + 兆瓦闪充随大唐/海豹 08/海狮 08/元 PLUS 量产</td>
+      <td class="signal">1MW 充电首落地；垂直一体化</td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr data-day="D1">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><b>禾赛 / 华为激光雷达</b> </td>
+      <td>华为 896 线双光路图像级雷达 + 3 固态组合落地</td>
+      <td class="signal">全球量产最高线数；从乘用车扩展到越野车</td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr data-day="D1">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><b>采埃孚 (ZF)</b> <span class="eu-tag-sm">🇪🇺</span></td>
+      <td>闭环转向控制 + FSD 可变阻尼供 Smart 精灵 #6</td>
+      <td class="signal">合资品牌底盘电控本土化</td>
+      <td class="src-cell">太平洋</td>
+    </tr><tr data-day="D1">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><b>大陆集团 (Continental)</b> <span class="eu-tag-sm">🇪🇺</span></td>
+      <td>合资智驾大陆基于征程 6M 端到端城区 NOA</td>
+      <td class="signal">Continental 加速本土化</td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr data-day="D1">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><b>追觅汽车 (Dreame)</b> </td>
+      <td>⭐ 跨界入局首次参展 (B3 馆)</td>
+      <td class="signal">⭐ <b>第三家 3C 科技公司系统性切入造车</b>；预期对标小米 SU7 Ultra 60-70 万</td>
+      <td class="src-cell">界面新闻</td>
+    </tr><tr data-day="D1">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><b>整零同馆 (供应商前置)</b> </td>
+      <td>轻舟智航夹在捷达和 VW 之间；元戎启行与小米隔面相对；黑芝麻+佑驾与奇瑞同 E1 馆</td>
+      <td class="signal">⭐ <b>整车厂首次被供应商在物理展位上"包围"</b>；叙事正式从"看品牌"→"看供应商"</td>
+      <td class="src-cell">界面新闻 / 36氪</td>
+    </tr><tr data-day="D1">
+      <td><span class="day-badge day-d1">D1</span></td>
+      <td><b>百度文心一言 + 字节豆包</b> <span class="eu-tag-sm">🇪🇺</span></td>
+      <td>北京现代艾尼氪 IONIQ V 同时接入文心+豆包；奔驰 GLC 接入字节强化学习大模型</td>
+      <td class="signal">大模型上车从"独家合作"进入"多模型并行"；🇪🇺 韩系/德系合资率先采用</td>
+      <td class="src-cell">新浪 / 凤凰网</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ============== 信息更新 ============== -->
+<section id="updates">
+  <h2><span class="sec-no">SECTION 07</span>🔄 信息更新追踪 (Updates to Prior Days)</h2>
+  <div class="sec-sub">28 项 D1→D2 更新 · 价格落地 / 上市时间 / 配置补全</div>
+
+  <table class="report-tbl">
+    <thead>
+      <tr>
+        <th style="width:200px">车型/技术</th>
+        <th style="width:30%">D1 状态</th>
+        <th>D2 (4/25) 更新</th>
+        <th style="width:90px">信源</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td><b>ID.ERA 9X</b></td>
+      <td>预售 ¥32.98–37.98 万</td>
+      <td class="d2-cell">⭐ <b>D2 4/25 正式上市 ¥30.98–35.98 万 / 限时权益 29.98–34.98 万 (比预售低 2 万)</b></td>
+      <td class="src-cell">中金在线</td>
+    </tr><tr>
+      <td><b>智界 V9</b></td>
+      <td>预售 ¥39.98 万起</td>
+      <td class="d2-cell">⭐ <b>D2 1 小时订单破 1.25 万</b></td>
+      <td class="src-cell">新浪汽车</td>
+    </tr><tr>
+      <td><b>红旗 H9</b></td>
+      <td>价格未公布</td>
+      <td class="d2-cell">⭐ <b>D1 落地 ¥33.98–50.98 万 (预售)</b></td>
+      <td class="src-cell">网易</td>
+    </tr><tr>
+      <td><b>红旗 H7</b></td>
+      <td>价格未公布</td>
+      <td class="d2-cell">车展现场展车确认 1.5T 110kW PHEV+磷酸铁锂；价仍未公布</td>
+      <td class="src-cell">凤凰网</td>
+    </tr><tr>
+      <td><b>红旗越野量产版</b></td>
+      <td>漏报</td>
+      <td class="d2-cell">补全: 5135×2050×1950 · 2900；2.0T 增程+四电机 620kW；下半年上市</td>
+      <td class="src-cell">凤凰网</td>
+    </tr><tr>
+      <td><b>红旗国耀 (2026 款)</b></td>
+      <td>漏报</td>
+      <td class="d2-cell">补全: D1 上市 ¥156–166 万；4.0T V8 双涡轮 400kW</td>
+      <td class="src-cell">搜狐</td>
+    </tr><tr>
+      <td><b>第二代腾势 D9</b></td>
+      <td>预售 ¥38.98 万</td>
+      <td class="d2-cell">⭐ <b>D2 上市日确认 4/27</b></td>
+      <td class="src-cell">易车</td>
+    </tr><tr>
+      <td><b>理想 L9 Livis</b></td>
+      <td>已公布 ¥55.98 万</td>
+      <td class="d2-cell">⭐ <b>D2 上市日确认 5/15 上市并交付</b></td>
+      <td class="src-cell">搜狐</td>
+    </tr><tr>
+      <td><b>极氪 8X</b></td>
+      <td>漏报</td>
+      <td class="d2-cell">补全: 4/17 上市 ¥35.68–50.08 万 / 限时 32.98–47.38 万</td>
+      <td class="src-cell">汽车之家</td>
+    </tr><tr>
+      <td><b>极氪 009 焕新版</b></td>
+      <td>预售开启</td>
+      <td class="d2-cell">5 月正式上市；意向金 5000 抵 10000；Naim 6 万音响 0 元选装</td>
+      <td class="src-cell">汽车之家</td>
+    </tr><tr>
+      <td><b>AUDI E7X</b></td>
+      <td>价格未公布</td>
+      <td class="d2-cell">⭐ D2 现场公开内饰；定价仍未发布</td>
+      <td class="src-cell">汽车之家</td>
+    </tr><tr>
+      <td><b>奔驰纯电 GLC</b></td>
+      <td>价格未公布</td>
+      <td class="d2-cell">配置确认 39.1" MBUX + 字节强化学习大模型；CLTC 680/703 km；价格仍未公布</td>
+      <td class="src-cell">汽车之家</td>
+    </tr><tr>
+      <td><b>与众 08</b></td>
+      <td>4/16 已上市 22.99–28.99 万</td>
+      <td class="d2-cell">车展现场展示，无价格变化</td>
+      <td class="src-cell">太平洋</td>
+    </tr><tr>
+      <td><b>与众 09</b></td>
+      <td>4/21 媒体之夜首发</td>
+      <td class="d2-cell">车展正式公开亮相 (D1+D2 持续展出)；24 个月开发周期得到现场确认</td>
+      <td class="src-cell">汽车之家</td>
+    </tr><tr>
+      <td><b>与众 07</b></td>
+      <td>车展首发</td>
+      <td class="d2-cell">D1 全球首秀；CEA 架构第二款；Q2 上市</td>
+      <td class="src-cell">ZAKER</td>
+    </tr><tr>
+      <td><b>ID.AURA T6</b></td>
+      <td>4/21 媒体之夜首发</td>
+      <td class="d2-cell">D1 4/24 一汽-大众展台正式公开亮相；20" 大轮毂；薄荷主题</td>
+      <td class="src-cell">扬子晚报</td>
+    </tr><tr>
+      <td><b>大众车展规划披露</b></td>
+      <td>—</td>
+      <td class="d2-cell">⭐ <b>2026 年 13 款新能源；2027 起 CEA 覆盖多平台；2029 累计 30+ 款</b></td>
+      <td class="src-cell">凤凰网</td>
+    </tr><tr>
+      <td><b>星途 EX7</b></td>
+      <td>漏报</td>
+      <td class="d2-cell">补全: 抢先置换价 ¥19.49–25.89 万；纯电+增程</td>
+      <td class="src-cell">新浪</td>
+    </tr><tr>
+      <td><b>智己 LS8</b></td>
+      <td>4/16 上市 ¥24.98 万起</td>
+      <td class="d2-cell">⭐ <b>D1 车展宣布上市 5 天交付破千</b></td>
+      <td class="src-cell">汽车之家</td>
+    </tr><tr>
+      <td><b>问道 V9</b></td>
+      <td>漏报</td>
+      <td class="d2-cell">补全: D2 现场首发 4/28 开预售；中大型增程 MPV</td>
+      <td class="src-cell">搜狐</td>
+    </tr><tr>
+      <td><b>吉利银河星耀 7</b></td>
+      <td>漏报</td>
+      <td class="d2-cell">补全: 4/16 预售 ¥11.28 万起；千里浩瀚 H3</td>
+      <td class="src-cell">微博</td>
+    </tr><tr>
+      <td><b>吉利银河 M9 黑金智曜版</b></td>
+      <td>漏报</td>
+      <td class="d2-cell">补全: ¥26.98 万 / 限时 25.98 万；千里浩瀚 H7+车顶激光雷达</td>
+      <td class="src-cell">新浪</td>
+    </tr><tr>
+      <td><b>小米 YU7 GT</b></td>
+      <td>价格未公布</td>
+      <td class="d2-cell">⭐ <b>D2 雷军确认 5 月底发布；零百进入 3 秒级</b></td>
+      <td class="src-cell">雷军微博</td>
+    </tr><tr>
+      <td><b>启境 GT7</b></td>
+      <td>全球首发</td>
+      <td class="d2-cell">⭐ <b>D3 4/26 预售 ¥28–35 万；首发 ADS 5 + HarmonySpace 6</b></td>
+      <td class="src-cell">IT之家</td>
+    </tr><tr>
+      <td><b>长城欧拉 5</b></td>
+      <td>漏报</td>
+      <td class="d2-cell">⭐ <b>D2 4/25 当日上市</b>: 混动 ¥8.98 万起 / 燃油 ¥7.98 万起；限时换新价 7.98/6.98 万起</td>
+      <td class="src-cell">新浪汽车</td>
+    </tr><tr>
+      <td><b>长安马自达 EZ-60 马年版</b></td>
+      <td>漏报</td>
+      <td class="d2-cell">补全: 增程 200 ¥13.99 万 / 纯电 600 ¥14.59 万</td>
+      <td class="src-cell">搜狐</td>
+    </tr><tr>
+      <td><b>雷克萨斯 ES (新一代)</b></td>
+      <td>漏报</td>
+      <td class="d2-cell">⭐ <b>D1 上市 ¥29.99 万 (混动版)</b>；老款 ES200 同堂销售；上代入门 ES 300h 37.89 万 → 直降至 30 万以内</td>
+      <td class="src-cell">汽车之家</td>
+    </tr><tr>
+      <td><b>追觅汽车价格预期</b></td>
+      <td>—</td>
+      <td class="d2-cell">AWE2026 现场: 对标小米 SU7 Ultra 60–70 万</td>
+      <td class="src-cell">新浪科技</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ============== Takeaway ============== -->
+<section id="takeaway">
+  <h2><span class="sec-no">SECTION 08</span>💡 D1+D2 增量 Takeaway</h2>
+  <div class="sec-sub">基于"今天新发生了什么"的判断 · 不是 D1 结论复述</div>
+
+  <div class="takeaways">
+    <div class="takeaway-card">
+      <h4><span class="takeaway-num">1</span>大众体系性押注 CEA 架构 — 2 天内 5 款车型同时落地</h4>
+      <p>⭐ 本届车展最大的<b>战略级信号</b>是: <b>大众安徽与众 07/08/09 + 一汽-大众 ID.AURA T6 + 上汽大众 ID.ERA 9X</b> 全部基于 CEA 电子电气架构 (大众 CARIAD+小鹏+地平线酷睿程联合开发)，且 D2 4/25 同时完成 ID.ERA 9X 价格落地 (¥30.98 万起)，确认了从 30 万级旗舰增程到 23 万级中型纯电 SUV 全价位带覆盖。
+<br/><br/>
+关键参数: <b>开发周期 18 个月、控制单元 -30%、自 2027 起逐步覆盖纯电+插混+增程多平台</b>。叠加奔驰 (字节)、AUDI (Momenta R7 全球首发)、艾尼氪 (CATL+Momenta+地平线+百度+豆包)、宝马 (Momenta+阿里 LLM)、Smart (博世+ZF)、长安马自达 (4nm 国产芯片)，<b>合资品牌"中国供应链平台化"两日内基本完成锁定</b>。🇪🇺 战略含义: 欧洲市场从中国出口的合资车型将自动捆绑中国供应链栈。</p>
+    </div><div class="takeaway-card">
+      <h4><span class="takeaway-num">2</span>Day 2 关键变化在"展位排布" — 整零同馆+追觅入局</h4>
+      <p>Day 2 最有信号价值的供应商动态在<b>"展位排布"</b>: 宁德时代 + BMW + Porsche 同 W4 馆；轻舟智航夹在捷达与 VW 之间；元戎启行与小米隔面相对；黑芝麻+佑驾与奇瑞同 E1 馆。<b>整车厂首次被供应商在物理展位上"包围"</b>。
+<br/><br/>
+叠加追觅作为<b>第三家 3C 科技公司</b>跨界入局造车 (对标小米 SU7 Ultra 60-70 万；继小米/华为之后)，行业话语权结构发生不可逆变化。鸿蒙智行 5 牌全部到齐 + 华为生态包馆 (W3)，"看华为"成为本届车展最大流量入口。
+<br/><br/>
+🇪🇺 对欧洲市场情报含义: 欧洲 OEM 选型时面临的"中国 Tier-1 不再是隐性合作伙伴"问题加速浮现。Momenta 同时供应 BMW + AUDI + 现代 + 大众 + 北汽 + 日产 + 智己 7 大集团，是中国智驾供应商最大订单聚集点。</p>
+    </div><div class="takeaway-card">
+      <h4><span class="takeaway-num">3</span>Day 2 真正的价格落地 — 30 万级合资增程旗舰锚定下移</h4>
+      <p>Day 2 (4/25) 当日真正落地的关键事件不是新车首发，而是<b>价格</b>: 上汽大众 <b>ID.ERA 9X 正式上市 ¥30.98–35.98 万 (限时权益 29.98–34.98 万)，比预售低 2 万</b>，将合资品牌全尺寸增程旗舰价格锚定下移到 30 万以内。
+<br/><br/>
+同步参考: 第二代腾势 D9 4/27 上市；理想 L9 Livis 5/15 上市；极氪 009 5 月上市；智界 V9 1 小时小订破 1.25 万。<b>40-60 万旗舰 SUV/MPV 价格锚定结构性下移正在发生</b>。
+<br/><br/>
+另一个 D2 重要发布: <b>地平线发布中国首款舱驾融合芯片 + 智能体操作系统</b>，预示 2026 下半年舱驾一体化将成为下一个重要竞争点。CATL 6 分钟满电续航 1500km 演示则把补能焦虑问题推到极限。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== Day 1 漏报清单 ============== -->
+<section id="missed">
+  <h2><span class="sec-no">SECTION 09</span>⚠️ Day 1 漏报透明清单</h2>
+  <div class="sec-sub">本次合并简报已全部补全 · 共 60+ 款车型/动态</div>
+  <p style="font-size: 13px; color: #6b6760; margin-bottom: 14px; line-height: 1.7;">
+    <b>根本原因不是简报漏写，而是 D1 实际有 200+ 场新闻发布会同步进行</b> ——这本身是本届北京车展的结构性事实: <b>全球唯一仍在扩张的 A 级车展，单日信息密度已超出任何团队的实时跟踪能力</b>。
+    建议未来车展简报采用"前两周窗口期 + Day-by-Day 增量"双轨追踪框架，前两周专门覆盖车展前的"提前发布"窗口 (鸿蒙智行春季 4/22、沃尔沃 4/15、魏牌 V9X 预售 4/17、零跑 D19 上市 4/16、奇瑞集中上市 4/24 前夕、雷军展前直播等)。
+  </p>
+  <div class="missed-grid">
+    <div class="missed-item">猛士 M817 Ultimate</div><div class="missed-item">极狐 S3</div><div class="missed-item">长城 H10</div><div class="missed-item">魏牌 V9X</div><div class="missed-item">哈弗猛龙 PLUS</div><div class="missed-item">长城炮 Hi4-T</div><div class="missed-item">红旗 H9 / H7 / 越野量产版 / 国耀 / 国宾丹霞</div><div class="missed-item">现代艾尼氪 IONIQ V + VENUS/EARTH 概念车</div><div class="missed-item">日产 NX8 + 都市/Terrano 概念车</div><div class="missed-item">吉利银河战舰 700</div><div class="missed-item">银河星耀 7</div><div class="missed-item">银河 M9 黑金智曜版</div><div class="missed-item">奔驰纯电 CLA 260 L</div><div class="missed-item">雷克萨斯 ES</div><div class="missed-item">长安马自达 EZ-60 马年版</div><div class="missed-item">莲花 For Me 黑金限量版</div><div class="missed-item">凯迪拉克凯威德</div><div class="missed-item">沃尔沃 EX90 / ES90 / XC70 99 周年</div><div class="missed-item">东风标致 Concept 6/8/Polygon + 雪铁龙 ELO/9X8</div><div class="missed-item">智己 LS8</div><div class="missed-item">极氪 8X</div><div class="missed-item">岚图泰山 X8</div><div class="missed-item">昊铂 S600</div><div class="missed-item">别克至境 E7</div><div class="missed-item">极氪 009 焕新版</div><div class="missed-item">奇瑞威麟 R08 PRO</div><div class="missed-item">星途 EX7</div><div class="missed-item">五菱星光 L</div><div class="missed-item">东风风行星海 V6</div><div class="missed-item">荣威家越 07 概念车</div><div class="missed-item">212 越野多款</div><div class="missed-item">天翎科 L600 飞行汽车</div><div class="missed-item">江汽 CV 质检大模型</div><div class="missed-item">长安启源 Q05 激光极智版</div><div class="missed-item">阿维塔 06T / 新阿维塔 12</div><div class="missed-item">长安第四代逸动蓝鲸超擎</div><div class="missed-item">问道 V9 (北汽享界)</div><div class="missed-item">广汽传祺向往 E8 PHEV</div><div class="missed-item">传祺越 7</div><div class="missed-item">AUDI A6L (32.29 万官方降价)</div><div class="missed-item">AUDI A6L e-tron</div><div class="missed-item">AUDI SQ8 / S5 Avant</div><div class="missed-item">宝马 M3 40 周年限量版</div><div class="missed-item">保时捷 919 Hybrid Evo</div><div class="missed-item">ID.AURA T6</div><div class="missed-item">与众 07 (D1 全球首秀)</div><div class="missed-item">一汽-大众王牌家族 (速腾 S/揽巡/探岳 L PHEV/迈腾 PHEV/帕萨特 ePro/途观 L ePro)</div><div class="missed-item">坦克 700 Hi4 (新款上市)</div><div class="missed-item">问界 M6</div><div class="missed-item">小米 Vision GT (国内首秀)</div><div class="missed-item">本田烨 P7 / 雅阁三代同堂 / F1 座舱</div><div class="missed-item">尚界 Z7/Z7T (4/22 预售)</div><div class="missed-item">智界 V9 (4/22 预售)</div><div class="missed-item">问界 M9 新款 (4/22 预售)</div><div class="missed-item">猛士 917 高地雄狮 (静态展示)</div><div class="missed-item">阿维塔 12 (新款)</div><div class="missed-item">零跑 Lafa5 Ultra</div><div class="missed-item">小米 SU7/Ultra/YU7 全系</div><div class="missed-item">奇瑞捷途纵横 G700/G900/F700</div><div class="missed-item">Smart #2 概念车</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="stamp">车型产品部 · 海外组 · INTERNAL DISTRIBUTION ONLY</div>
+  数据来源: IT之家 / 汽车之家 / 新浪汽车财经科技 / 爱范儿 / 凤凰网 / 搜狐汽车 / 网易 / 易车 / 太平洋汽车 / 网通社 / TechWeb / 界面新闻 / 36氪 / 每经 / 中金在线 / 中国证券报 / 央视 / 量子位 / 第一电动等公开信源 (130+ 篇)<br/>
+  仅作为内部分析参考；车展期间滚动更新；价格以官方最终公告为准 · D3 (4/26 专业观众日 1) 重点观察: 合资品牌签约/定点仪式 + 启境 GT7 D3 正式预售
+</footer>
+
+<script>
+// ===== Filter for CN cards =====
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('#cn-grid .car-card').forEach(card => {
+      if (filter === 'all' || card.dataset.day === filter || (filter === 'D1' && card.dataset.day === 'D1+D2')) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// ===== Smooth scroll =====
+document.querySelectorAll('nav.toc a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      const offset = target.getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
